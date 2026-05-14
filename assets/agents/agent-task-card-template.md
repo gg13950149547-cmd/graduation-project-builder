@@ -1,0 +1,136 @@
+# Agent Task Card Template
+
+## Card Fields
+- card_id:
+- run_id:
+- lane:
+- role_alias_zh:
+- role_applicability:
+- attendance_status:
+- not_applicable_reason:
+- skip_reason:
+- lane_alias_zh:
+- owner:
+- owner_alias_zh:
+- system_agent_id:
+- authorization_source:
+- agent_mode:
+- run_manifest_path:
+- objective:
+- inputs:
+- project_template_discovery_root:
+- template_discovery_patterns:
+- discovered_candidate_template_paths:
+- candidate_template_selection_reason:
+- active_template_source_type:
+- active_template_path_lock:
+- active_template_fingerprint:
+- active_template_profile_path:
+- active_template_selected_before_mutation:
+- template_alignment_evidence_required:
+- template_alignment_evidence_paths:
+- template_alignment_verdict:
+- mandatory_thesis_surface_inventory_path:
+- front_matter_surface_coverage_matrix_path:
+- end_matter_surface_coverage_matrix_path:
+- high_risk_thesis_format_surface_matrix_path:
+- surface_inventory_verdict:
+- touched_paragraph_ids:
+- touched_surface_families:
+- sibling_surfaces:
+- blast_radius_pages:
+- stale_audits:
+- rerender_targets:
+- reviewed_output_path:
+- reviewed_output_sha256:
+- outputs:
+- dependencies:
+- spawn_requested:
+- spawn_status:
+- spawn_agent_id:
+- spawn_agent_alias_zh:
+- fallback_mode:
+- status:
+- audit_agent_id:
+- sequential_audit_fallback_id:
+- audit_agent_alias_zh:
+- audit_required:
+- audit_spawn_or_fallback_mode:
+- action_audit_scope:
+- action_audit_verdict_cadence:
+- action_audit_verdicts:
+- action_cycles:
+- mutation_audit_scope:
+- mutation_audit_verdicts:
+- skill_invocation_verified:
+- routed_references_verified:
+- active_checklist_verified:
+- user_request_compliance_verdict:
+- loaded_rule_compliance_verdict:
+- project_local_helper_preflight_report_path:
+- project_local_helper_risk_count:
+- project_local_helper_disposition:
+- canonical_source_restart_required:
+- contaminated_baseline_disposition:
+- protected_surface_contract_path:
+- source_review_artifact_inventory_path:
+- final_review_artifact_diff_path:
+- review_comments_change_marks_preservation_verdict:
+- comments_strip_explicit_user_approval:
+- source_body_citation_run_inventory_path:
+- final_body_citation_run_diff_path:
+- body_citation_superscripts_preservation_verdict:
+- protected_surface_contract_loaded:
+- canonical_protected_surface_ids_in_scope:
+- protected_surface_owner_map:
+- protected_surface_evidence_map:
+- surface_paragraph_and_typography_evidence_paths:
+- surface_paragraph_and_typography_verdict:
+- toc_visual_geometry_evidence_paths:
+- toc_visual_geometry_verdict:
+- toc_paragraph_and_typography_evidence_paths:
+- toc_paragraph_and_typography_verdict:
+- toc_visible_run_typography_evidence_paths:
+- toc_visible_run_typography_verdict:
+- whole_document_pagination_evidence_path:
+- whole_document_pagination_verdict:
+- frontmatter_toc_structure_repair_report_path:
+- frontmatter_toc_structure_repair_operations:
+- frontmatter_toc_structure_changed_zip_parts_verdict:
+- frontmatter_toc_structure_media_rels_unchanged_verdict:
+- frontmatter_toc_structure_rendered_review_verdict:
+- protected_surface_reviewed_output_sha256:
+- protected_surface_contract_verdict:
+- audit_verdict:
+- supervised_by:
+- evidence_required:
+- evidence_paths:
+- blockers:
+- notes:
+
+## Lane Notes
+- controller:
+- worker:
+- audit:
+- format lane: before any thesis-format mutation, record project template discovery root, discovered candidates, active template path, active template fingerprint, active template profile path, protected-surface contract path, canonical protected surface ids in scope, protected-surface owner map, protected-surface evidence map, all-surface paragraph-and-typography evidence paths/verdict, TOC visual-geometry evidence paths/verdict and TOC paragraph-and-typography evidence paths/verdict when TOC is present or user-reported, whole-document pagination evidence path/verdict, mandatory thesis surface inventory path, front/end matter coverage matrix paths, high-risk thesis format surface matrix path, touched surfaces, sibling surfaces, blast-radius pages, stale audits, rerender targets, reviewed output sha256, and template-alignment evidence in this card.
+
+## Audit Evidence Requirements
+- reviewed_artifacts:
+- reviewed_action_cycles:
+- action_categories:
+- action_owner_map:
+- changed_paths_by_mutation_cycle:
+- loaded_skill_rules_reviewed:
+- checklist_reviewed:
+- requirement_match_reviewed:
+- command_or_check:
+- verdict:
+- open_blockers:
+
+## Required Canonical Values
+- lane must be one of: `controller`, `content-worker`, `format-worker`, `figure-worker`, `citation-worker`, `program-worker`, `acceptance-worker`, `audit`
+- role_alias_zh must match the lane: `controller=总控`, `content-worker=内容`, `format-worker=格式`, `figure-worker=图表`, `citation-worker=引用`, `program-worker=程序`, `acceptance-worker=验收`, `audit=审核`
+- allowed attendance_status: `active`, `not-applicable`, `skipped-with-reason`
+- allowed spawn_status: `spawned`, `not-requested`, `blocked`, `sequential-fallback`
+- `single-agent-no-auth` cards must not invent `spawn_agent_id`; they must name `sequential_audit_fallback_id` or a durable audit record path
+- active mutation cards must name changed paths, mutation audit scope, mutation audit verdicts, exact reviewed output path, and exact reviewed output SHA256

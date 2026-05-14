@@ -44,4 +44,5 @@ $skill-installer install https://github.com/<owner>/<repo>/tree/<ref>/<path/to/g
 ## Notes
 
 - This publishing copy intentionally omits local-only mirror markers and cache folders.
+- The bundle includes agent orchestration roles under `agents/`.
 - The canonical maintained development copy remains local.

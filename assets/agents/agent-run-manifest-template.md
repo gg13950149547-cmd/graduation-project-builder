@@ -1,0 +1,123 @@
+# Agent Run Manifest Template
+
+## Run Fields
+- run_id:
+- task_mode:
+- subtask:
+- authorization_source:
+- agent_mode:
+- max_concurrent_live_agents:
+- live_agent_count_plan:
+- dispatch_wave_plan:
+- audit_presence_by_wave:
+- concurrency_limit_verdict:
+- required_lanes:
+- complete_role_roster:
+- role_attendance_matrix:
+- not_applicable_lanes_with_reasons:
+- role_alias_map_zh:
+- lane_alias_map_zh:
+- required_lane_aliases_zh:
+- spawned_agent_aliases_zh:
+- controller_role_alias_zh:
+- worker_role_aliases_zh:
+- audit_role_alias_zh:
+- spawn_attempted:
+- spawned_agent_ids:
+- sequential_fallback_reason:
+- audit_agent_id:
+- sequential_audit_fallback_id:
+- audit_spawn_or_fallback_mode:
+- audit_verdict:
+- audit_verdict_cadence:
+- action_audit_scope:
+- action_audit_verdict_cadence:
+- action_audit_verdicts:
+- action_cycles:
+- mutation_audit_scope:
+- mutation_audit_verdicts:
+- skill_invocation_verified:
+- routed_references_verified:
+- active_checklist_verified:
+- user_request_compliance_verdict:
+- loaded_rule_compliance_verdict:
+- project_local_helper_preflight_report_path:
+- project_local_helper_risk_count:
+- project_local_helper_disposition:
+- canonical_source_restart_required:
+- contaminated_baseline_disposition:
+- source_review_artifact_inventory_path:
+- final_review_artifact_diff_path:
+- review_comments_change_marks_preservation_verdict:
+- comments_strip_explicit_user_approval:
+- source_body_citation_run_inventory_path:
+- final_body_citation_run_diff_path:
+- body_citation_superscripts_preservation_verdict:
+- protected_surface_contract_path:
+- protected_surface_contract_loaded:
+- protected_surface_id_set:
+- protected_surface_owner_map:
+- protected_surface_evidence_map:
+- surface_paragraph_and_typography_evidence_paths:
+- surface_paragraph_and_typography_verdict:
+- toc_visual_geometry_evidence_paths:
+- toc_visual_geometry_verdict:
+- toc_paragraph_and_typography_evidence_paths:
+- toc_paragraph_and_typography_verdict:
+- toc_visible_run_typography_evidence_paths:
+- toc_visible_run_typography_verdict:
+- whole_document_pagination_evidence_path:
+- whole_document_pagination_verdict:
+- frontmatter_toc_structure_repair_report_path:
+- frontmatter_toc_structure_repair_operations:
+- frontmatter_toc_structure_changed_zip_parts_verdict:
+- frontmatter_toc_structure_media_rels_unchanged_verdict:
+- frontmatter_toc_structure_rendered_review_verdict:
+- protected_surface_reviewed_output_sha256:
+- protected_surface_contract_verdict:
+- format_template_discovery_summary:
+- template_discovery_patterns:
+- discovered_candidate_template_paths:
+- candidate_template_selection_reason:
+- active_template_source_type:
+- active_template_path_lock:
+- active_template_fingerprint:
+- active_template_profile_path:
+- active_template_selected_before_mutation:
+- template_alignment_verdict:
+- exact_output_path:
+- exact_output_sha256:
+- touched_surface_families:
+- canonical_protected_surface_ids_in_scope:
+- protected_surface_ids_skipped_with_reasons:
+- action_categories:
+- action_owner_map:
+- changed_paths_by_mutation_cycle:
+- stale_audits:
+- rerender_targets:
+- handoff_status:
+- notes:
+
+## Dispatch Evidence
+- controller_lane:
+- worker_lanes:
+- audit_lane:
+- system_agent_id_alias_map:
+- lane_task_card_paths:
+- evidence_paths:
+
+## Handoff Notes
+- final_status:
+- blocker_summary:
+- skipped_lanes_with_reasons:
+- all_role_task_card_paths:
+- audit_full_roster_verdict:
+
+## Required Canonical Values
+- canonical_lane_ids: `controller`, `content-worker`, `format-worker`, `figure-worker`, `citation-worker`, `program-worker`, `acceptance-worker`, `audit`
+- canonical_role_alias_map_zh: `controller=总控`, `content-worker=内容`, `format-worker=格式`, `figure-worker=图表`, `citation-worker=引用`, `program-worker=程序`, `acceptance-worker=验收`, `audit=审核`
+- allowed_agent_mode: `parallel-subagents`, `sequential-fallback`, `single-agent-no-auth`
+- max_concurrent_live_agents: must be `<= 6`
+- no_spawn_without_authorization: `true`
+- single_agent_no_auth_requires: `sequential_audit_fallback_id` or durable lightweight audit record path
+- substantial_run_requires: complete role roster, role attendance matrix, action audit verdicts, mutation audit verdicts when changed paths exist, and final audit verdict

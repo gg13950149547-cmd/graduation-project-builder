@@ -1,0 +1,39 @@
+# Skill Invocation Lock
+
+- skill name: graduation-project-builder
+- user invocation source: user reported that prior execution read rules but did not truly activate the explicit invocation workflow
+- invocation detected: yes
+- lock created before mutation?: yes
+- run start order verdict: pass for canonical skill-maintenance mutation; prior project-read drift is recorded as the defect being repaired
+- task mode: skill-maintenance
+- subtask: make explicit invocation bootstrap-first before project inspection or ad hoc execution
+- project root: C:/Users/Administrator/.agents/skills/graduation-project-builder
+- requested mutation?: yes
+- thesis/docx surface touched?: no
+- loaded entrypoint: SKILL.md
+- loaded routed references: references/user-feedback-persistence.md; references/user-feedback/maintenance-and-structure.md; references/agents/agent-lanes.md; skill-creator/SKILL.md
+- active checklist path: references/cases/skill-maintenance-20260512-bootstrap-first-checklist.md
+- agent run manifest path: references/cases/skill-maintenance-20260512-bootstrap-first-manifest.md
+- lane task card paths: references/cases/skill-maintenance-20260512-bootstrap-first-manifest.md
+- project-local helper preflight report path: not-applicable, canonical skill bundle maintenance only
+- project-local helper risk count: 0
+- project-local helper disposition: not-applicable
+- mutation transaction record path: not-applicable, no thesis DOCX mutation
+- mutation allowed verdict: pass for canonical skill files only
+- blocked reason: none
+- exact output path: C:/Users/Administrator/.agents/skills/graduation-project-builder
+- exact output sha256: not-applicable, canonical skill bundle directory validated by skill gate
+- final gate record path: references/cases/skill-maintenance-20260512-bootstrap-first-manifest.md
+- final gate command: py -3 scripts/validate_skill_gate.py --skill-root .
+- final gate verdict: pass
+- explicit invocation source type: user correction about explicit skill invocation
+- skill activation status: active
+- rule engine takeover verdict: pass
+- prohibited bypasses checked: pass no thesis/program mutation before maintenance lock
+- canonical gate required?: yes
+- narrow/smoke gate substitute used?: no
+- failed evidence escalation verdict: pass prior bypass is treated as skill-maintenance defect, not caveat
+- no project-local thick helper execution before preflight?: not-applicable
+- no mutation before lock?: yes
+- final handoff allowed verdict: pass
+- blocked evidence disposition: prior reference-only drift is escalated to canonical rule/validation maintenance

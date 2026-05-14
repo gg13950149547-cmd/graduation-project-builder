@@ -1,0 +1,71 @@
+# Agent Run Manifest
+
+## Run Fields
+- run_id: skill-maintenance-20260514-github-sync
+- task_mode: skill-maintenance
+- subtask: sync canonical local skill bundle to the user's GitHub
+- authorization_source: no explicit subagent authorization in current user request
+- agent_mode: single-agent-no-auth
+- max_concurrent_live_agents: 0
+- live_agent_count_plan: no spawned agents
+- dispatch_wave_plan: not-applicable
+- audit_presence_by_wave: sequential-audit-fallback for all action cycles
+- concurrency_limit_verdict: pass
+- required_lanes: controller, content-worker, format-worker, figure-worker, citation-worker, program-worker, acceptance-worker, audit
+- complete_role_roster: present in task-card record
+- role_attendance_matrix: references/cases/skill-maintenance-20260514-github-sync-task-cards.md
+- not_applicable_lanes_with_reasons: content/format/figure/citation/program/acceptance worker lanes have no thesis/program surface work; git synchronization is controlled by controller with audit fallback
+- role_alias_map_zh: controller=总控; content-worker=内容; format-worker=格式; figure-worker=图表; citation-worker=引用; program-worker=程序; acceptance-worker=验收; audit=审核
+- lane_alias_map_zh: controller=总控; content-worker=内容; format-worker=格式; figure-worker=图表; citation-worker=引用; program-worker=程序; acceptance-worker=验收; audit=审核
+- required_lane_aliases_zh: 总控, 内容, 格式, 图表, 引用, 程序, 验收, 审核
+- spawned_agent_aliases_zh: none
+- controller_role_alias_zh: 总控
+- worker_role_aliases_zh: none active
+- audit_role_alias_zh: 审核
+- spawn_attempted: no
+- spawned_agent_ids: none
+- sequential_fallback_reason: user did not authorize subagents
+- audit_agent_id: none
+- sequential_audit_fallback_id: controller-local-audit
+- audit_spawn_or_fallback_mode: sequential-audit-fallback
+- audit_verdict: pending
+- audit_verdict_cadence: after each action cycle and mutation cycle
+- action_audit_scope: skill invocation, routed references, lock/checklist/manifest creation, git state inspection, repository initialization/commit/push, validation, handoff
+- action_audit_verdict_cadence: per cycle
+- action_audit_verdicts: pending
+- action_cycles: bootstrap complete; git inspection pending; git mutation pending; validation pending; handoff pending
+- mutation_audit_scope: control artifact creation and any git repository metadata/content changes
+- mutation_audit_verdicts: control artifacts created, pending review; git mutation pending
+- skill_invocation_verified: yes
+- routed_references_verified: yes
+- active_checklist_verified: yes
+- user_request_compliance_verdict: pending
+- loaded_rule_compliance_verdict: pending
+- project_local_helper_preflight_report_path: not-applicable
+- project_local_helper_risk_count: 0
+- project_local_helper_disposition: not-applicable
+- canonical_source_restart_required: no
+- contaminated_baseline_disposition: pre-lock git probe recorded as reference-only drift and superseded by fresh lock
+- exact_output_path: C:/Users/Administrator/.agents/skills/graduation-project-builder
+- exact_output_sha256: pending
+- action_categories: bootstrap, inspect, mutate, verify, handoff
+- action_owner_map: controller owns execution; audit fallback reviews evidence
+- changed_paths_by_mutation_cycle: references/cases/skill-maintenance-20260514-github-sync-lock.md; references/cases/skill-maintenance-20260514-github-sync-checklist.md; references/cases/skill-maintenance-20260514-github-sync-manifest.md; references/cases/skill-maintenance-20260514-github-sync-task-cards.md
+- stale_audits: pre-lock git probe cannot be used as final evidence
+- handoff_status: pending
+- notes: no thesis document mutation is allowed in this run
+
+## Dispatch Evidence
+- controller_lane: active, local controller
+- worker_lanes: present in task-card record, not-applicable with reasons
+- audit_lane: active sequential-audit-fallback
+- system_agent_id_alias_map: local-controller=总控; controller-local-audit=审核
+- lane_task_card_paths: references/cases/skill-maintenance-20260514-github-sync-task-cards.md
+- evidence_paths: pending
+
+## Handoff Notes
+- final_status: pending
+- blocker_summary: pending GitHub remote/authentication verification
+- skipped_lanes_with_reasons: non-git worker lanes not applicable because request is skill bundle synchronization only
+- all_role_task_card_paths: references/cases/skill-maintenance-20260514-github-sync-task-cards.md
+- audit_full_roster_verdict: pending

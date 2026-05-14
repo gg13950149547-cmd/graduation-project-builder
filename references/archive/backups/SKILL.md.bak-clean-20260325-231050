@@ -1,0 +1,109 @@
+---
+name: graduation-project-builder
+description: Finish a graduation project or course-design deliverable end to end across common software and thesis-delivery workflows.
+---
+
+# Graduation Project Builder
+
+Execute like an end-to-end project finisher. The target is not just code changes; the target is a project that can be explained, run, tested, demonstrated, packaged, and defended.
+
+Use this skill when the user asks to complete, continue, polish, revise, package, or repair a graduation project, course-design project, or companion thesis/dissertation.
+
+Common triggers include:
+
+- 毕设 / 毕业设计
+- 课程设计
+- 管理系统 / 推荐系统 / 数据分析系统 / 可视化系统
+- 配套论文 / 毕业论文 / 论文初稿 / 论文终稿
+- Django / Flask / FastAPI / Spring Boot / SSM / Vue / React / Node.js / mixed frontend-backend repositories
+
+## Primary outcome
+
+Produce as many of these as the repository allows:
+
+- automatic requirement summary
+- automatic development backlog and implementation
+- automatic improvement and polish pass
+- automatic verification and test pass
+- startup, deployment, packaging, and reporting guidance
+- executable scaffold generation for startup, deployment, packaging, testing, and reporting
+- thesis-companion planning, drafting, diagram planning, and format-following support
+
+If the repository cannot fully reach those states, build as much of the automation and delivery surface as possible and document the exact blockers.
+
+## Default workflow
+
+1. Summarize requirements automatically from the repo.
+2. Detect the current stack and adapt to it.
+3. Turn the brief into an execution backlog.
+4. Develop missing features in vertical slices.
+5. Add automation surfaces such as scripts, docs, seed/import paths, and packaging helpers.
+6. Improve and polish the product surface.
+7. Test automatically and continuously.
+8. Finish for defense and delivery.
+
+## Always inspect first
+
+Before editing, inspect:
+
+- project root and subprojects
+- framework markers and package manifests
+- run, build, test, and migration commands
+- README, docs, SQL, screenshots, task books, or reports
+- deployment scripts, seed scripts, data import scripts, and packaging files
+- missing modules, broken routes, placeholder pages, and untested flows
+- thesis templates, sample papers, chapter outlines, school formatting requirements, and figure/table examples when present
+
+## Key operating rules
+
+- Preserve the existing stack unless it is structurally broken.
+- Prefer a runnable demo path over optional features.
+- Prefer fewer complete modules over many broken ones.
+- When a graduation-project task includes both the program and the thesis, restart from a full completion check and prioritize unfinished system work before further thesis polishing.
+- For graduation-project web systems, authentication is part of the minimum believable delivery unless the user explicitly wants a public route.
+- Prefer separate user-side and admin-side experiences instead of blending all roles into one screen.
+- User-side pages should default to the current logged-in user's own information rather than exposing all records.
+- For admin analytics or backend statistics surfaces, ensure at least one chart is a line chart; do not ship a dashboard made only of tables, counters, or bar-like visuals.
+- UI copy should read like a real product for students, teachers, administrators, or operators.
+- For graduation-project program pages, Chinese should be the primary UI language by default. Do not ship a fully English interface unless the user explicitly requests English. English may appear only as secondary supportive labels or small annotations when helpful.
+- After meaningful changes, verify the narrowest relevant checks for the stack and record what passed, failed, or was skipped.
+- Whenever this skill is used to create or modify files, every effective user correction or revision request given during the work must be promoted back into this skill's references or scripts, not only left in the current project.
+- When the user says the current output is wrong, especially for thesis formatting or template-following, do not only acknowledge it. First record the correction, then derive a concrete countermeasure checklist from the correction, and only then continue implementation.
+- For ongoing graduation-project tasks, do not wait for a final retrospective. Every effective modification requested or validated by the user during the task should be written back into this skill or its references as it happens, so the skill evolves continuously during delivery.
+- If self-check finds the current result unqualified against the user's stated requirements, continue automatically and fix it instead of stopping at the judgment.
+- During thesis drafting, do not stop at intermediate draft states; continue until the manuscript is fully written to the current best content-complete draft quality before asking the user to inspect it, unless a real blocker appears.
+- If the real system can run, prefer real page screenshots in the thesis implementation chapter, and do not treat the thesis as finished while final template formatting is still visibly mixed or chaotic.
+- For template-following thesis rebuilds, prefer the now-proven repair path: keep the template front matter structure, remove legacy body block elements completely, rebuild正文 with the real template's paragraph formats, and place code/tables back into their matching chapter sections instead of letting them drift near the directory.
+
+## References in this skill directory
+
+Use these when relevant:
+
+- `references/workflow-standard.md`
+- `references/user-feedback-persistence.md`
+- `references/stack-adaptation.md`
+- `references/verification-matrix.md`
+- `references/executable-automation.md`
+- `references/thesis-companion.md`
+- `references/thesis-template-learning.md`
+- `references/thesis-production-workflow.md`
+- `references/thesis-troubleshooting-log.md`
+- `references/django-music-reference.md`
+- `references/mall-bigdata-reference.md`
+- `references/cnki-citation-policy.md`
+
+## Scripts in this skill directory
+
+If useful, run:
+
+- `scripts/generate_project_blueprint.py`
+- `scripts/generate_delivery_scaffold.py`
+- `scripts/generate_acceptance_report.py`
+- `scripts/generate_thesis_blueprint.py`
+- `scripts/extract_thesis_template.py`
+
+Resolve all relative paths against this skill directory.
+
+## Preservation note
+
+Supporting references, scripts, and memory files remain in the same directory. If more detailed rules are needed during execution, read the corresponding reference files directly.

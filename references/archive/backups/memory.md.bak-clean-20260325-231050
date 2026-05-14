@@ -1,0 +1,222 @@
+﻿# Working Memory
+
+## User Collaboration Preference
+
+- When the user repeatedly states "涓嶈鍜ㄨ鎴? or equivalent, do not pause mid-work for confirmation once the direction is clear.
+- In that mode, finish the current end-to-end batch first, then notify the user with completed outputs and concrete file paths.
+- Prefer autonomous execution over checkpoint-style updates unless a destructive or ambiguous action would create meaningful risk.
+- For this user, every concrete post-delivery correction must be written back into skill memory, not only project-local learnings.
+- For this user, whenever the user explicitly says “记住/以后记住/默认这样做”, write the rule into `graduation-project-builder` skill memory immediately, not only into project-local files.
+- For this user, all valid lessons from the current conversation must be backfilled into skill memory, not only newly mentioned ones. Do not leave older thread learnings stranded in project-local files.
+- For this user, all future corrections, preferences, workflow constraints, UI rules, and delivery expectations raised in the conversation should default to skill-memory writeback unless the user explicitly says otherwise.
+- For this user, runnable project deliveries should leave a `.bat` startup script as the default visible launcher, even if PowerShell scripts also exist.
+- For this user, after each completed project modification batch, actually start the application once, verify access, and report the test account(s) plus the access IP/URL in the final handoff.
+- For this user, admin-side and user-side functionality must be clearly split in routes, navigation, and visible pages. Do not leave them blended into one shared workspace.
+- For this user, text-recognition flows must be sanity-checked with both normal and risky sample inputs before delivery. If ordinary text is still flagged as risky by default, treat the classifier as broken and fix it before handoff.
+- For this user, frontend copy must be written from the operator's or end user's point of view. Avoid system self-introduction, defense-style narration, or labels like “create demo account” when the real user action is simply “register”.
+- For this user, all introductory copy on pages should start from user intent: what the person wants to watch, find, manage, decide, or act on right now. Do not use banner/hero copy to introduce “the system”, “the project”, or “the graduation design” unless the page is explicitly about documentation.
+- For this user, if a banner, hero, section intro, or help text still reads like a system introduction after a UI revision, treat it as unfinished and rewrite it until the wording is clearly about the user's current goal.
+- For this user, homepage copy should be aggressively trimmed. If a sentence only explains version boundaries or future expansion and is not needed for the current user action, remove it.
+- For this user, every valid correction in the thread must be written into skill memory immediately. Do not postpone or assume project-local learnings are sufficient.
+- For this user, homepage/dashboard metrics must use real database-backed values or real runtime values. Do not show training-sample counts, model-test accuracy, or hardcoded module totals as if they were live business data.
+- For this user, when a module is explicitly requested as “frontend only”, still build it as a complete-looking product surface. Include the normal intro, fields, action buttons, result panels, and record areas, and avoid blunt UI copy like “not implemented” or “temporarily unavailable”.
+- For this user, frontend UI should default toward a Bilibili-like content-platform style: prominent top navigation, hero/banner, category entry area, dense but readable content feed, media-first cards, and polished side modules. Avoid plain admin-template layouts and generic card walls.
+- For this user, any obvious image slot in the system UI should be filled by default. Prefer real or generated artwork/posters/banners over blank placeholders, and if no external asset exists, generate a local fallback image automatically.
+- For this user, title-based media cards should first attempt an internet lookup for the real work (for example official poster, cover, or broadly recognized artwork) before falling back to local generated imagery. Do not use text-heavy placeholder art when a recognizable poster can be sourced.
+- For this user, media-card text must not sit directly on top of already text-heavy poster art. If the image itself contains title lettering or dense graphic copy, move the page title/summary below the image instead of overlaying it.
+- For this user, navigation pills in the same row should look like one controlled system. Normalize width/height and center alignment instead of letting labels create uneven button sizes.
+- For this user, category/search/filter controls are only acceptable when they actually change the visible content area beneath them. Do not leave “fake filters” that update query params but keep showing the old recommendation feed.
+- For this user, when homepage sub-navigation or category pills are shown as primary controls, they must have unified button dimensions and clear active states. Uneven pill widths should be treated as unfinished UI.
+- For this user, filters/search on homepage should switch the main feed itself into a filtered-results state. Do not keep the original recommendation panel title or content when a filter is active.
+- For this user, first-level thesis headings should inherit the template's `Heading 1` style directly. Do not manually override run-level font family or bold weight for chapter titles if the template already defines them.
+- For this user, thesis code sections should include only core excerpts, not whole source files. Extract the minimum set of classes/functions needed to explain the implementation.
+- For this user, each thesis code block should be introduced by a short explanatory paragraph of roughly 300 Chinese characters that explains purpose, role, and why the snippet matters.
+- For this user, code blocks must be style-isolated so nearby titles and body text do not visually deform. After every code block, explicitly reset paragraph rhythm before the next heading or body paragraph.
+- For this user, `参考文献`, `致谢`, and `附录` must be treated as independent thesis blocks with their own formatting rules, not lazily grouped as ordinary first-level chapter headings.
+- For this user, when the user says all first-level headings are wrong, do not patch one heading in isolation. Re-audit and repair the entire first-level heading chain against the template in one pass.
+- For this user, if newly drawn thesis figures diverge from previously approved figure-drawing rules, stop using the new figure style immediately and revert to the remembered approved drawing method before regenerating figures.
+- For this user, whenever a graduation project contains business data, the admin backend should default to include several data-analysis tables. Do not stop at plain totals or raw record lists; add management-facing statistical tables such as category distribution, time trend, top items, or abnormal/risk summaries.
+- For this user, if a new backend/dashboard rule is accepted into skill memory during the current project, apply it to the current admin backend immediately when the current project has matching data.
+- For this user, “后台做几个数据分析的表” means visual analytics charts by default, not only HTML tables. Prefer bar, line, pie, and trend charts, with tables as a secondary supplement.
+- For this user, if the backend has business data, charts are mandatory. The minimum acceptable analytics surface is at least one trend chart and one structural chart, not only KPI numbers and tables.
+- For this user, “system is already runnable” is never enough to stop. If the feature depth, analytics surface, or admin capability still feels below graduation-project level, continue expanding until it reaches a defendable full-project standard.
+- For this user, graduation-project workflow is system-first: finish the real system, run it, test it, and capture screenshots before pushing the thesis to a finalized state.
+- For this user, do not stop at a demo-only prototype. If the project still lacks persistence, auth, admin operations, analytics, packaging, or screenshot-ready pages, keep building.
+- For this user, user-facing copy must avoid technical-jargon phrasing such as API paths, JSON output explanations, or developer-debug labels on prominent UI surfaces.
+- For this user, before claiming a local web system is accessible, verify all three: background process is alive, target port is listening, and HTTP requests return 200.
+- For this user, when rebuilding a thesis DOCX from a template, deleting only paragraphs is unsafe. Remove all block-level body elements after the anchor heading (`摘要` / `摘  要`) and before the final section properties, or old tables/images/body content will leak ahead of the abstract and corrupt TOC/body formatting.
+- For this user, thesis format review must continue down to cover-title font, TOC second-level indentation, and heading paragraph geometry. Do not stop after fixing only body paragraphs.
+- For this user, TOC level-2 formatting should be corrected per paragraph in the final DOCX when needed. Style-only fixes are not reliable enough.
+- For this user, if the TOC still looks unlike the sample after spacing/indent fixes, treat it as a heading-hierarchy problem first. Rebuild the body into a richer second/third-level structure before re-tuning TOC appearance.
+- For this user, thesis font fixing must use dual-font handling: Chinese via eastAsia font and English/digits via western font. TOC correctness also requires real dotted tab leaders and right-aligned page numbers, not just tab characters or indentation.
+- For this user, thesis code blocks and figure captions are separate formatting targets. Code blocks should use a consistent monospace style with no body-text indentation; figure captions should be centered and formatted explicitly, not left to inherit from body or heading styles.
+- For this user, if abstract, TOC, or references regress more than once, stop local patching and realign those whole blocks to the sample/template structure directly. Repeated front-matter errors are a signal that the repair strategy is wrong.
+- For this user, the default thesis generation path should be: rebuild from template baseline first, then fix front matter/TOC, then body hierarchy, then code blocks/figure captions/references as separate passes. Prefer this over repeated patching on one drifting DOCX.
+- For this user, all thesis tables/forms must follow the layout pattern of `语音识别.docx` directly. Do not invent new table layouts when the sample already provides a target structure.
+- For this user, all thesis diagrams and figures must follow the visual style of `语音识别.docx` as closely as possible. Treat the sample as the direct figure-style reference, not just a loose inspiration.
+- For this user, once the user confirms the thesis content is acceptable, stop touching content and switch into a format-only pass. At that stage, focus only on headings, TOC, figures, tables, code blocks, references, and front/back matter formatting.
+- For this user, if the remaining issue is narrowed to figures only, freeze everything else and run a dedicated figure-rebuild pass. Do not keep changing unrelated text or structure at that stage.
+- For this user, “对标范文的图和表” is not satisfied by planning or near-match styling. The figures/tables must be redrawn or restructured and actually inserted into the latest thesis file before handoff.
+- For this user, figure replacement must be verified figure by figure in the latest DOCX. A regenerated image file or a rebuilt document alone is not enough; confirm the final visible figure is the intended replacement.
+- For this user, within the current project, default every follow-up conversation to a proactive workflow: think through each issue, propose and execute a solution path, then write the resolved lesson back into skill memory without waiting for another reminder.
+- For this user, mixed Chinese/English typography must be normalized. Do not allow stray spaces or stretched spacing around English words, acronyms, or numbers inside Chinese paragraphs.
+- For this user, the reference-splitting repair is valid, but after any reference-block rewrite you must explicitly verify that the following acknowledgement heading still exists. Tail-block fixes must preserve the `致谢` title and its body.
+
+## Thesis Word Assembly Lessons
+
+- Do not write multiple logical paragraphs into one Word paragraph via a single `Range.Text` containing embedded carriage returns. This causes heading/body merges and broken styles from later versions.
+- Do not anchor appendix insertion by searching plain text like `附录...` without distinguishing TOC entries from body content; this can accidentally inject appendix content into the directory section.
+- For chapter repair in Word, prefer:
+  - replace heading paragraph only
+  - insert new body paragraphs separately
+  - insert next chapter heading as its own paragraph
+  - append appendix content only at the true document end
+- When regenerating a thesis DOCX, unify TOC styles (`目录 1`, `目录 2`, `目录 3`) alongside body styles. Do not assume the table of contents will stay correct after heading/style edits.
+- If heading fonts are normalized, update the TOC and then explicitly normalize TOC fonts, size, color, indentation, and line spacing to match the template baseline.
+- Treat standalone institutional/front-matter headings such as `大连科技学院`, `毕业设计（论文）原创承诺书`, `参考文献`, `致谢`, and `附录：程序代码（含详细注释）` as title-level headings, not body text.
+- Never classify front-matter title pages or appendix opening pages by content generation heuristics alone; explicitly preserve their heading role and typography.
+- When fixing thesis formatting, do not rely on a single global rule for all non-numbered paragraphs. Some non-numbered paragraphs are major headings and must inherit heading formatting.
+- Before finalizing a thesis DOCX, run a heading audit for chapter titles, second-level titles, third-level titles, appendix title, reference title, acknowledgement title, and front-matter title pages.
+- If a paragraph contains multiple logical blocks merged into one paragraph, do not continue styling downstream content until the merged paragraph is split back into separate paragraphs.
+- Record all thesis-format regressions from this thread: cover/front matter was accidentally restyled instead of copied from the original thesis file; TOC formatting diverged from the original template; appendix/reference/acknowledgement headings were incorrectly treated as editable generated headings instead of protected template headings.
+- For this user, front matter and TOC must be copied from the original thesis file directly whenever formatting drifts. Do not regenerate or restyle the cover/TOC manually if the original file already has the correct layout.
+- When repairing a thesis, prefer copying the original formatted range (cover, TOC, other front matter) via Word formatted content instead of recreating the layout with styles.
+- Error pattern from this thread: never insert or append thesis body text by anchoring on TOC entries. Directory text that visually matches headings is not a safe insertion anchor.
+- Error pattern from this thread: appendix content must be verified after generation. It is not enough that the appendix title exists; the core-code body must actually appear under it, and its font/style must match the intended appendix body formatting.
+- When using Word/WPS COM for thesis reconstruction, open the template/sample file in read-only mode only. Never leave the template in an editable state.
+- Always operate on a copied destination file, not the template itself.
+- Avoid workflows that can trigger Save As prompts on close. Save the destination explicitly, close the destination, and close the template without saving.
+- Repeated Save As popups indicate the COM workflow is wrong and must be corrected before further document operations.
+- If a thesis DOCX shows cascading format pollution (TOC mixed with body, appendix missing body, heading hierarchy corrupted, front matter drifting), stop patching immediately and roll back to the clean draft or original manuscript. Do not keep iterating on polluted intermediate versions.
+- For this user, once a generated thesis version is identified as polluted, the only acceptable recovery path is: template/sample as format base + original draft as content reference + fresh rebuild.
+- Template file is read-only and must never be modified. All thesis operations must target a copied working file only.
+- Avoid any COM workflow that can trigger save confirmation dialogs for the template. If a dialog risk exists, abort that method and switch to a safer copy-based workflow.
+- When adding figure captions or explanatory text to a thesis DOCX, never overwrite a paragraph just because it looks blank. First check whether that paragraph carries a drawing, anchor, or image container. Preserve the original image paragraph and insert caption/description paragraphs adjacent to it instead.
+- Error pattern from this thread: do not insert thesis images by fixed paragraph index. DOCX paragraph indexes drift after any content or style change.
+- For this user, thesis figures must be inserted or replaced by locating the exact caption text, then verifying the image is actually attached to the intended anchor before moving to the next figure.
+- If an image-replacement pass reports success but the target DOCX still shows no real image attachment, treat that file as invalid and roll back immediately to the clean baseline.
+- Correct figure workflow for this user: first inspect whether the target figure is already embedded in the DOCX and whether it needs replacement; only then replace the specific embedded figure. Never assume a figure is missing or already replaced without checking.
+- Before any thesis image operation, verify three things in order: caption exists, current image anchor exists, replacement image path exists. Then replace only the matched figure.
+- For thesis-review tasks, build a confirmed-comment list first. Only comments explicitly visible in user-provided screenshots, templates, or source files may enter the edit plan.
+- If the user says the provided screenshots are the complete comment set, do not infer extra reviewer intent from patterns in the manuscript. Missing evidence means ask for more material, not guess.
+- When the user authorizes a school template as the formatting baseline, treat that template as the single source of truth for title fonts, TOC title styling, chapter pagination, table-title language, and table font sizes.
+- If a thesis review asks for staged edits, separate the plan into: directly actionable formatting fixes, content fixes that still need user confirmation, and fixes blocked on missing source artifacts such as result figures.
+- Chapter-level formatting lesson: when a school template or reviewer requires each chapter to start on a new page, apply page-break-before to first-level chapter headings only. Do not infer that lower-level headings also need forced page breaks unless the template says so.
+- Figure-caption lesson: when a reviewer says a figure lacks explanation, insert a centered figure title and a separate explanatory paragraph after the preserved figure anchor. Do not reuse the image paragraph as caption text.
+- Table-format lesson: when a reviewer flags missing English table titles or wrong table font sizes, add bilingual table titles immediately above the affected table and normalize header/body font sizes inside the table instead of only changing the visible title line.
+- Delivery lesson from this project: when a partial batch is authorized first and other reviewer points are deferred, produce a staged output file and clearly state which reviewer comments were intentionally not modified.
+- Image-sizing lesson from this project: never guess image width by eye. Read the actual section page width and margins from the target DOCX, compute a conservative max width from the text area, then normalize all inline pictures to that width or smaller.
+- Chapter-separation lesson from this project: chapter 3 design diagrams and chapter 4 runtime screenshots must never be mixed in one replacement pass. Replace them independently by chapter semantics, not only by missing-caption positions.
+- Table-layout lesson from this project: when DOCX tables show split words, stacked characters, or text that looks like it has extra leading spaces, treat it as a table layout problem first. Clear cell paragraph indents, avoid distributed spacing, assign explicit stable column widths, and reduce table font size before touching body text.
+
+- Directory lesson from this project: prefer WPS/Word built-in TOC generation/update over hand-editing XML styles. Fix heading hierarchy first, regenerate/update the TOC with the office app, then do only minimal style normalization if needed.
+
+- TOC rebuild lesson from this project: before calling WPS/Word built-in TOC update, audit all heading-styled paragraphs and demote any body text that was accidentally styled as a heading. Otherwise the regenerated TOC will absorb body content.
+
+- TOC cleanup lesson from this project: when a regenerated TOC still contains figures or tables, audit every heading-styled paragraph, not just long body text. Figure captions, table captions, and short explanatory lines may also have been accidentally styled as headings and must be demoted before updating the TOC.
+
+- Appendix lesson from this project: when the appendix title exists but code is missing, insert the core code directly under the appendix title and before the originality statement page. Remove blank placeholder paragraphs in that interval first.
+
+- Figure-caption audit lesson from this project: after any image replacement pass, run a full audit that every image paragraph is followed by a numbered caption. Do not stop at checking embed success alone.
+
+- Post-insert figure audit lesson from this project: after every image insertion or replacement, verify three things immediately: the image is embedded, a numbered caption follows it, and the caption text matches the real program page or diagram semantics.
+
+- Non-matching figure lesson from this project: if a thesis figure does not match the real system, do not leave a stale caption or empty slot. Redraw or replace it with a program-aligned figure, then update the caption and re-audit the image-caption binding.
+
+- Semantic consistency lesson from this project: after confirming a figure matches the real program, also verify it matches the thesis section semantics. If a real screenshot is placed in a design chapter, revise the surrounding prose to frame it as interface/module design or move it to the implementation chapter.
+
+- Chapter image ordering lesson from this project: after updating chapter 3, audit image-type consistency in order. ER/DFD/database-design figures must not be interleaved with runtime screenshots; screenshots belong in implementation chapters unless explicitly framed as UI design and kept out of ER/database subsections.
+
+- Chapter 3 structure lesson from this project: runtime screenshots do not belong in chapter 3. If screenshots are inserted there and end up mixed with ER/DFD/database-design figures, remove them, restore chapter 3 to design-only figures, renumber the figure sequence, and update text references accordingly.
+
+- Final cleanup lesson from this project: after figure-text alignment is fixed, run one more pass for repeated explanatory paragraphs and over-claimed screenshot coverage. The prose should describe only the pages actually shown in the inserted figures.
+
+## Consolidated Thesis Workflow
+
+- Always start from a clean baseline:
+  - use the school sample/template as the formatting baseline when authorized
+  - use the user's original draft as the content baseline
+  - if a generated version becomes polluted, stop patching it and roll back to the clean baseline immediately
+
+- Protect template and front matter:
+  - open the template/sample in read-only mode only
+  - never modify the template file itself
+  - operate only on copied destination files
+  - if cover, TOC, originality statement, references, acknowledgements, or appendix title formatting drifts, restore from the original/template instead of hand-rebuilding
+
+- Before any TOC update:
+  - audit all heading-styled paragraphs
+  - demote any body text, figure-caption paragraph, table-caption paragraph, or empty image-anchor paragraph that was accidentally styled as a heading
+  - only then use WPS/Word built-in TOC update
+  - after update, verify the TOC contains only real headings and no figures, tables, or body content
+
+- Before any image work:
+  - confirm the target caption exists
+  - confirm the nearby image anchor exists, or explicitly classify the slot as a missing-image case
+  - confirm the replacement image asset exists
+  - never insert or replace by fixed paragraph index alone
+
+- After every image insertion or replacement:
+  - verify the image is actually embedded in the DOCX
+  - verify the next non-empty paragraph is the correct numbered caption
+  - verify the caption text matches both the real system and the thesis section semantics
+
+- Chapter-level image rules:
+  - chapter 3 must contain design-only figures: architecture, module, use-case, business flow, DFD, ER/data-dictionary/database-design figures
+  - chapter 4 contains runtime screenshots and implementation UI evidence
+  - do not mix chapter 4 screenshots into chapter 3
+  - if chapter 3 gets polluted with screenshots, remove them, renumber the chapter-3 figures, and update the surrounding prose
+
+- Image sizing rules:
+  - compute a conservative max width from the actual page width and margins of the target section
+  - normalize all inline images to that width or smaller
+  - never guess image width by eye
+  - after resizing, verify images do not overflow page bounds
+
+- Table rules:
+  - if table text appears split, vertically stacked, or looks like it has extra leading spaces, treat it as a layout problem first
+  - clear cell paragraph indents and abnormal spacing
+  - assign explicit stable column widths
+  - reduce table font size where needed
+  - only edit table text after layout is stable
+
+- Appendix rules:
+  - if appendix code is required, insert it directly under the appendix title and before the originality-statement page
+  - remove blank placeholder paragraphs in that interval first
+  - verify the appendix contains actual code, not just the appendix title
+
+- Final pre-delivery audit:
+  - heading hierarchy audit
+  - TOC-only-headings audit
+  - image embedded + caption present audit
+  - image/program/thesis-semantic alignment audit
+  - chapter-3 design-only audit
+  - table layout audit
+  - appendix content audit
+  - duplicate paragraph and over-claim cleanup
+- For this user, after every thesis-edit batch, run a machine-vision style visual comparison between the sample thesis pages and the current output pages. If the rendered result is still visibly different, continue editing instead of handing off.
+- For this user, diagram replacement is not complete unless vertical boxes use vertical text, connector lines land on the intended nodes, and the full figure fits inside the canvas without clipping.
+- 2026-03-23: 论文配图最终收口规则：竖向窄框内文字必须竖排；所有连线必须锚定到实体/菱形/泳道等图元边缘，不能指向空白；出图后要检查四周安全边距，避免裁切；替换进 docx 后必须再核验最终内嵌媒体而不是只确认源图片生成成功。
+- 2026-03-23: 论文终修阶段若用户只指出单张图和正文问题，应做局部收口：仅重画被点名图，并仅重压正文 Normal 长段落，避免再次扰动目录、标题和图题。
+- 2026-03-23: 论文终稿只剩目录和标题字体问题时，必须局部修复 Heading/TOC，不再联动正文、图题或图片。
+- 2026-03-23: 若目录和标题字体仍不对，直接用样板文档中对应 Heading/TOC 段落作为母版，复制段落格式和首个有效 run 样式到终稿同类段落，不要继续手写猜测字体。
+- 2026-03-23: 当用户说目录和标题完全没变化时，直接复制样板段落的 pPr/rPr XML 到目标同类段落，不要再依赖 python-docx 的高层字体赋值。
+- 2026-03-23: 复制样板标题/目录段落时不能把 pStyle/rStyle 一起带过去，否则会冲乱目标文档样式名；只复制 pPr/rPr 的格式子节点。
+- 2026-03-23: 若复制样板段落后标题/目录样式名被冲掉，必须从未损坏版本重出，并保留目标段落原有 pStyle，只覆盖其它 pPr/rPr 子节点。
+- 2026-03-23: 摘要正文和封面题名若未修好，不要再套用正文/标题通用规则；应直接以样板中对应段落为母版回刷。
+- 2026-03-23: 封面顶部若错位，直接逐段回刷样板的第 1/2/6/13/40 段，并清空多余副标题行；不要再让封面段落继承正文格式。
+- 2026-03-23: 正文表格若与模板不同，优先补齐 tblBorders、tblLayout 和 tblCellMar；只处理正文表格，不动封面信息表。
+- 2026-03-23: 数据库设计章节若只有 ER 图没有字段表，需在 4.4 节内补 表4-1 用户表、表4-2 审核记录表，并把正文所有表格统一成三线表。
+- 2026-03-23: 三线表不能保留 tblBorders 的四周和内部边框；正文表格应把 tblBorders 置 nil，仅在首行上/下边和末行下边设置实线。
+- 2026-03-23: 真正的三线表要同时清空 tblBorders 和所有单元格的 left/right/top/bottom，再只给首行 top+bottom 和末行 bottom 画线。
+- 2026-03-23: 若三线表仍显示淡灰色网格线，正文表格应重构为段落式三线表：用制表位排列表头与行数据，用段落上/下边框画三条横线。
+- 2026-03-23: 后续任何毕设论文的正文表格默认统一采用段落式三线表，不使用普通 Word 网格表；只保留顶线、表头下线、底线，不保留竖线和内部横线。
+- 2026-03-23: 对该用户，后续所有操作与有效修改默认都要记录到 graduation-project-builder memory，不再等待用户重复提醒。
+- 2026-03-23: 若用户提供时序图范例，业务时序图必须按范例式 UML 时序图重画：Actor、顶部对象框、虚线生命线、横向消息箭头、alt 分支框都要具备，不能再用简化流程图替代。
+- 2026-03-23: 后续只要模板里存在图样，必须先读取模板图样本身，再按同一种图法、构图和外观重画；默认要求是外形与模板一致，不再自行选择其它图法。
+- 2026-03-24: 总体 ER 图若模板提供的是 Chen 风格图样，必须按实体矩形、属性椭圆、关系菱形、1/N 基数的同款外形重画，不再用简化框图替代。
+- 2026-03-24: 技术介绍章节必须与真实技术栈一致；若项目实际使用 Flask，就同步修改目录项、章节标题和正文说明，不能保留 Django 等不一致描述。
+- 2026-03-24: 第 5 章系统截图默认统一采用 引导句 -> 说明文字 -> 截图 -> 图题 的顺序，不在说明文字中间穿插页面截图。
+- 2026-03-24: 英文摘要页若错乱，要按样板英文摘要页的整页结构回刷：空行、Abstract 标题、三段英文正文、Keywords，避免段落错位导致英文单词间距异常。
+- 2026-03-24: 英文摘要页修复后还要复核 Abstract 标题必须是 Heading 1 且居中，Keywords 必须是 Normal 且左对齐，避免再次错位成普通段落或标题段。
+- 2026-03-24: 当用户确认“现在是完整的初稿了”后，要把本轮会话中已经验证过的首稿标准沉淀回 skill，后续同类毕设默认按“一步到位的完整初稿”生成，而不是先给简化版再多轮补丁。该首稿标准至少包含：系统先完成并可运行、真实截图已采集、论文技术栈与真实项目一致、代码块为核心节选且带说明、正文表格统一为真正三线表、参考文献/致谢/附录独立处理、一级标题回到模板样式、页面文案以用户视角撰写、前台 UI 达到内容平台完成度、后台含图表分析、所有有效修正已同步到 skill memory。

@@ -1,0 +1,130 @@
+# Thesis Format Review Checklist
+
+Use this checklist before claiming thesis formatting is complete.
+
+## Protected Blocks
+- [ ] `references/thesis/format-rules/protected-surface-evidence-contract.md` was loaded and its canonical protected surface ids were used in the checklist, manifest, task cards, evidence records, and final acceptance record
+- [ ] cover checked independently
+- [ ] Chinese abstract checked independently
+- [ ] English abstract checked independently
+- [ ] TOC checked independently
+- [ ] Chinese abstract title has a separate baseline, DOCX paragraph/run evidence, rendered-region evidence, metric comparison, and pass verdict
+- [ ] Chinese abstract body has a separate baseline, DOCX paragraph/run evidence, rendered-region evidence, metric comparison, and pass verdict
+- [ ] Chinese keyword line has row-level evidence plus label/content run-split evidence and pass verdict
+- [ ] English abstract title has a separate baseline, DOCX paragraph/run evidence, rendered-region evidence, metric comparison, and pass verdict
+- [ ] English abstract body has a separate baseline, DOCX paragraph/run evidence, rendered-region evidence, metric comparison, semantic parity check against the Chinese abstract, and pass verdict
+- [ ] English keyword line has row-level evidence plus label/content run-split evidence, semantic parity check against the Chinese keywords, and pass verdict
+- [ ] TOC title has a separate baseline, DOCX paragraph/run evidence, rendered-region evidence, metric comparison, and pass verdict
+- [ ] every TOC level used in the final manuscript has separate baseline metrics, paragraph/run evidence, rendered-region evidence, and pass verdict
+- [ ] every TOC level used in the final manuscript has Word/WPS paragraph-dialog and typography evidence: style id/name, font size/weight, before/after spacing, line-spacing mode/value, indentation, tab stops, leader type, and scale/compression verdict
+- [ ] TOC dotted leaders and right-tab positions were checked against the locked baseline, not only confirmed visible
+- [ ] TOC page-number column was checked per entry against rendered heading pages and the displayed page-numbering system
+- [ ] TOC rendered visual geometry was checked against the template, including title bounding box, first-entry gap, row bounding boxes, per-level left x, row y-deltas, leader start/end/density, page-number x column, row count per page, and page occupancy rhythm
+- [ ] TOC was not accepted from content/font/page-number/style evidence alone; rendered geometry evidence exists and has a pass verdict
+- [ ] references checked independently
+- [ ] acknowledgement checked independently
+- [ ] appendix checked independently when applicable
+- [ ] exact final submission DOCX path was locked for this review
+- [ ] exact final submission PDF path was locked for this review when PDF export is required
+- [ ] unresolved cover identity placeholders were either filled or explicitly waived by the current user
+
+## Structural Checks
+- [ ] heading styles are real heading styles
+- [ ] touched heading families were rechecked after any helper script or bulk DOCX mutation, and no heading that should be a real heading style remains on `Normal`
+- [ ] TOC was protected from heading repair logic
+- [ ] heading / TOC / chapter-start surfaces were treated as one linked repair surface when any of them was touched
+- [ ] TOC baseline source was explicitly locked and did not default to the current wrong draft
+- [ ] if the school source was `.doc`, the converted template TOC structure was inspected before TOC restoration
+- [ ] chapter titles start on new pages
+- [ ] front-matter pagination is correct
+- [ ] main-text pagination is correct
+- [ ] rendered page review started from the cover page and continued forward in order
+- [ ] no abnormal blank pages remain
+- [ ] no near-empty pages or large unexplained white areas remain from duplicated hard page breaks or duplicated section breaks
+- [ ] no figure page leaves a near-empty previous page because a large figure block was forced forward by unsafe sizing or keep rules
+- [ ] no abnormal blank lines remain
+- [ ] no abnormal extra spaces remain
+- [ ] no stray full-width spaces, stray tabs, or mixed-spacing artifacts remain in headings, body paragraphs, captions, TOC, references, and acknowledgements
+- [ ] no final verdict was based on an intermediate draft or review copy instead of the exact final named deliverable
+- [ ] every helper script or bulk DOCX mutation used one explicit canonical target path rather than a wildcard or latest-file guess
+- [ ] no protected surface was touched by overlapping generic and custom scripts in the same pass without an explicit ownership lock
+- [ ] every helper script or bulk DOCX mutation was followed by a document-open smoke audit before the next repair step
+- [ ] the post-script smoke audit confirmed expected table count, heading-family integrity, TOC/bookmark integrity, and caption/table adjacency on the exact target path
+
+## Style Checks
+- [ ] every touched or user-reported template-owned surface has a locked baseline paragraph/run instance from the approved template, teacher sample, accepted manuscript, or explicit user rule
+- [ ] no touched surface was accepted based only on page order, same-page presence, no-overflow status, visible text correctness, or style name
+- [ ] surface-face parity was checked for every touched surface family: style binding, outline/list state, alignment, indentation, spacing, line spacing, tabs/leaders, keep rules, page-break ownership, borders/shading when applicable, font mappings, font size, bold/italic/underline/color/highlight, superscript/subscript, and required run boundaries
+- [ ] Chinese, Western/English, and complex-script font families were copied from the locked baseline rather than chosen from builder defaults, office defaults, or hardcoded helper-script tables
+- [ ] actual effective fonts were resolved through direct run properties, character style, paragraph style, basedOn chain, docDefaults, theme major/minor mappings, and WPS/Word UI displayed font names before any font-family pass verdict
+- [ ] protected abstract and TOC rows include baseline effective font chain, actual effective font chain, compared `ascii`/`hAnsi`/`eastAsia`/`cs` slots, theme/default alias verdict, UI-displayed font evidence, and an effective font-chain pass verdict
+- [ ] no `Calibri (正文)`, `Calibri (Body)`, `minorHAnsi`, `minorEastAsia`, or other theme/default alias is accepted unless the locked template baseline proves the same alias for that exact surface
+- [ ] if a baseline font or surface metric was unavailable, the review records that surface as blocked rather than passed
+- [ ] sibling surfaces in the same class were audited after any user-reported format complaint, such as all abstract surfaces, all used TOC levels, all cells in a touched table family, or both header/footer plus page-number presentation
+- [ ] body font and size are consistent
+- [ ] body font and size match the approved local sample paragraph instance rather than a builder default
+- [ ] the body-normalization pass did not rewrite cover/title-page lines, declaration rows, or other protected front-matter text into the body baseline
+- [ ] body font color is template-compliant and no unexpected non-black text remains
+- [ ] heading level 1, heading level 2, and heading level 3 use the template-required font, size, and black text color
+- [ ] figure captions and table captions use the template-required font, size, alignment, and black text color
+- [ ] code titles such as `代码 1 ...` or `程序清单 1 ...` use the approved non-body code-title baseline rather than body-text fallback
+- [ ] code blocks keep the approved code font family, size, indent, and line-spacing baseline instead of inheriting ordinary body paragraph formatting
+- [ ] figure-holder paragraphs, figure captions, table captions, continuation titles such as `续表`, and table-cell paragraphs do not retain body first-line indent or body justification residue
+- [ ] figure-holder paragraphs do not retain heading/TOC/caption style binding, outline level, list metadata, or fixed body-text line spacing
+- [ ] every structural figure still matches the locked figure family or approved sample rather than a generic quick-diagram look
+- [ ] figure-caption and table-caption baseline instances were extracted from a real approved local sample instead of being rebuilt from a generic body style
+- [ ] visible figure captions and table captions contain no editorial provenance notes, placeholder notes, or build remarks unless the approved sample explicitly requires them
+- [ ] body header and body footer/page-number presentation were checked separately against the approved sample/template instead of inferring one from the other
+- [ ] body header horizontal placement and header-line alignment match the approved sample/template
+- [ ] visible footer/page-number presentation matches the template baseline, not merely the existence of a page number field
+- [ ] footer and page-number paragraphs do not retain abnormal first-line indent, left/right indent, or other visible offset drift
+- [ ] all real body tables were enumerated on the exact review-copy path before final acceptance
+- [ ] one active table authority was explicitly locked for the exact review-copy path before table review
+- [ ] the active table authority includes manuscript-binding proof instead of relying on an ambiguous historical rule
+- [ ] every enumerated table was checked against the active table border family, not only against generic formatter output
+- [ ] custom-layout empirical result tables were excluded from any later generic whole-document table-style pass unless that pass explicitly preserved their width/font tuning
+- [ ] no table remains on a Word default full-grid border family when the active target is a thesis three-line or sample-derived academic table style
+- [ ] no table retains unintended colored shading, tinted header fill, or other non-template cell background when the active table family is monochrome
+- [ ] table-indent review checked both paragraph indents and table/cell margins (`tblCellMar` / `tcMar`) for tables whose text still looked visually offset
+- [ ] every cross-page table continuation page shows the required continuation title such as `续表` when the active template/sample requires that family
+- [ ] continuation-title paragraphs such as `续表` stay outside the table grid and remain attached to the continued table fragment
+- [ ] run-level residual colors were checked in body text, headings, abstract blocks, TOC, captions, references, and acknowledgements
+- [ ] run-level residual bold, italic, underline, highlight, and shading were checked in body text, headings, abstract blocks, TOC, captions, references, and acknowledgements
+- [ ] every touched or user-reported mixed-script body paragraph was checked at run level for Chinese/Western font-slot separation rather than accepted from a paragraph-wide font verdict
+- [ ] no touched body paragraph that mixes Chinese with English words, identifiers, API routes, file names, model names, or digit-heavy ASCII content was rebuilt into one uniform-format run
+- [ ] touched font-family names and visible text in `document.xml`, `styles.xml`, `fontTable.xml`, and any touched header/footer parts were audited for mojibake or unreadable East Asian font labels
+- [ ] TOC indentation, dotted leaders, and page alignment match the sample/template
+- [ ] TOC visible format matches the sample/template as a TOC page class rather than only carrying synchronized page numbers
+- [ ] TOC exists in exactly one accepted form for the final deliverable, not as a mixed live-plus-static block
+- [ ] no visible TOC placeholder or helper text remains on rendered pages
+- [ ] rendered TOC front-matter strings match the active numbering convention such as `摘要 I / Abstract II / 目录 III` when that convention is required by the sample/template
+- [ ] if the TOC was refreshed in Word/WPS, TOC title and TOC level formatting were explicitly restored from the approved local baseline instead of being left in default app styling
+- [ ] TOC right-tab position and dotted-leader column match the approved template/sample rather than only the previous draft
+- [ ] if the template TOC depended on direct paragraph formatting, those direct metrics were restored explicitly instead of relying only on style names
+- [ ] TOC entries were not accepted merely because `TOC 1/2/3` style names or per-level style bindings existed; paragraph-dialog metrics and typography values match the template for each used level
+- [ ] abstract repair, if claimed, explicitly covered Chinese abstract title/body/keywords and English abstract title/body/keywords as six independent surfaces rather than only TOC-to-abstract pagination
+- [ ] keyword labels are bold but keyword content is not bold unless template requires otherwise
+- [ ] references formatting matches the template baseline
+- [ ] conclusion, references, acknowledgement, and other touched tail-block titles were restored from a real template/sample title baseline rather than a hand-scripted font-name reconstruction path
+- [ ] every touched tail-block title still starts on a fresh page with one verified opener owner, and the page immediately before that opener was reviewed
+- [ ] references block contains only real bibliography entries and does not contain template samples, placeholder author strings, or template explanation notes
+- [ ] formula layout matches the template or accepted formula sample
+- [ ] formula numbering is present and uses the template-required chapter-based numbering family
+- [ ] no formula number remains as a standalone numbering paragraph below the equation when the template requires same-line numbering
+- [ ] formula numbering remains a right-aligned dedicated numbering surface rather than fused into the equation line
+- [ ] formula numbering reaches the far right end of the formula line on the rendered page rather than only appearing near the equation
+- [ ] citation numbering was audited against first appearance order in body text, not only against the bibliography list
+- [ ] no rendered body page leaks citation bookmark names, helper labels, or field identifiers such as `cite_ref_*`
+- [ ] the exact review-copy path has a dedicated body-citation audit report and that report shows no order, coverage, or forbidden-surface failures
+- [ ] the bibliography is not non-empty while the body-citation audit still reports zero real body citations
+- [ ] every page that contains a real table was rendered and visually checked for final border geometry
+- [ ] color, highlight, shading, comments, and tracked revisions were checked
+- [ ] chapter-4 runtime screenshot slots were checked against a caption-route-asset map rather than only against file names
+- [ ] no structural diagram is occupying a runtime screenshot slot in the final deliverable
+- [ ] one rendered page from each sample class was compared directly against the local sample before final acceptance
+- [ ] if broad quality issues were reported, troubleshooting followed the required order: figure style, global formatting, run-level colors, then thesis length
+
+## Acceptance Rule
+Do not pass this checklist unless rendered pages were inspected.
+- [ ] rendered-page review covered the exact final deliverable in page order from cover through end matter, not only sampled pages
+- [ ] none of the abstract or TOC verdicts rely on officecli structural validation, PDF export success, raw page images, style names, title/keyword/entry presence, page-order checks, or sampled screenshots as a substitute for surface-level template comparison evidence

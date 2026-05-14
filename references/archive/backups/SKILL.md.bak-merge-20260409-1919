@@ -1,0 +1,1088 @@
+---
+name: graduation-project-builder
+description: Finish a graduation project or course-design deliverable end to end across common software and thesis-delivery workflows.
+---
+
+# Graduation Project Builder
+
+Execute like a delivery finisher. The target is a project that can be explained, run, tested, demonstrated, packaged, and, when required, turned into a matching thesis.
+
+## Core Mode Split
+
+Classify the task first:
+
+- `program-only`: build and polish the real system
+- `thesis-only`: revise or produce the paper when the system is already stable or the user explicitly wants paper-only work
+- `program-plus-thesis`: finish the system first, then produce the paper
+- `format-repair-only`: focus on template, headings, TOC, figures, tables, references, appendix, headers, footers, and page numbering
+
+Do not let thesis-formatting rules dominate a program-only task.
+
+## Default Working Rules
+
+- Read the real repository before proposing changes.
+- Reconstruct requirements from the repo when the brief is incomplete.
+- Prefer autonomous execution over repeated confirmation once direction is clear.
+- Continue automatically if self-check says the result is still below graduation-project level.
+- Preserve the existing stack unless it is structurally broken.
+- Prefer a runnable, defendable delivery over a wide but shallow feature list.
+- Default UI language to Chinese unless the user explicitly asks for another language.
+- For web graduation projects, default to a clear frontend-backend separated architecture unless the user explicitly requires a different structure.
+- For web systems, separate login, user-side, and admin-side experiences when roles differ.
+- For admin analytics, include at least one line chart.
+- Keep the project directory structure tidy and legible.
+- After meaningful changes, really run the project or the narrowest relevant verification path instead of relying on file inspection alone.
+- When filling demo data, sample data, screenshots, listings, seeded entities, or example business records for real-world domains, prefer real-world entities that actually exist and can be verified.
+- Do not casually invent brands, vehicle models, stores, institutions, products, or other real-world-style entities when the project would be more believable with authentic data.
+- If you must use fictional placeholder data because real data is unavailable or inappropriate, say so briefly and keep it clearly placeholder-like rather than deceptively real.
+
+## Program Workflow
+
+1. Inspect the repo.
+2. Summarize purpose, roles, modules, data path, startup path, and verification path.
+3. Turn missing work into a backlog.
+4. Build incomplete modules in vertical slices:
+   - model or schema
+   - business logic
+   - route or API
+   - page or consumer
+   - validation and error handling
+5. Add operations surfaces:
+   - start script
+   - deploy script when useful
+   - seed or import path
+   - packaging path
+   - README
+6. Add analytics, admin operations, and persistence when the project still looks prototype-level.
+7. Verify:
+   - startup
+   - main route
+   - main business flow
+   - one admin flow
+   - one analytics or reporting flow when applicable
+8. Package the program for delivery.
+
+Program packaging must default to a concrete delivery bundle rather than a plain source archive. The expected package should include complete separated frontend-backend source code, complete separated runnable build output, one-click deploy script, one-click start script for the deployed program, manual deployment guide, and startup-and-usage guide.
+
+Read `references/program/workflow-standard.md` and `references/program/verification-matrix.md` when needed.
+
+## Program Completion Standard
+
+Treat a graduation-project program as incomplete until most of these are true:
+
+- authentication exists when the system has protected roles
+- persistence exists for real business data
+- admin-side or management-side flow exists when the topic implies management
+- analytics exist when the project has operational or business data
+- startup path is real
+- demo data path is real
+- demo entities are believable and, when they represent real-world brands/models/products/institutions, are preferably real and verifiable rather than fabricated
+- test or self-check path exists
+- packaging output exists
+- the UI is screenshot-ready
+- the project uses a clear frontend-backend separated architecture when it is a web system
+- the repository structure is organized enough that another student can understand startup path, module boundaries, and delivery artifacts quickly
+
+If several of these are still missing, do not stop for a progress handoff. Keep building until the remaining gaps are materially reduced or a real blocker appears.
+
+## Thesis Workflow
+
+Only use the thesis path when the task includes the paper.
+Do not enter the thesis workflow until the program is already finished to a believable delivery level, unless the user explicitly requests thesis-only work.
+
+Thesis image-generation rules apply to every thesis-related mode: `program-plus-thesis`, `thesis-only`, and `format-repair-only` whenever figures, tables, screenshots, or diagram replacement are part of the work.
+
+Diagram style precedence rules also apply to thesis-related modes whenever a diagram is created or redrawn:
+
+- If the user supplies a diagram image as a style reference, treat that image as the visual source of truth.
+- If the project already records a stable diagram baseline, use that baseline instead of falling back to a generic style.
+- Do not silently modernize, recolor, simplify, or restyle a thesis diagram when the user asked to match a specific reference.
+- For thesis ER diagrams, default export background should be transparent unless the user explicitly asks for a filled background.
+- Thesis ER diagrams fail review if any entity box, relationship diamond, attribute ellipse, or cardinality marker overlaps another shape.
+
+Thesis completion verification rules also apply to every thesis-related mode: once the agent believes the modification is complete, it must run one final machine-vision review pass before reporting completion. This review must verify whether the actual user requirements were achieved in the produced artifact, not merely whether files were generated.
+Template-comparison verification rules also apply during thesis format-repair work: when the task is about thesis formatting, do not wait until the end to compare the result against the template. During repair, use machine vision to compare the relevant template pages and the thesis pages for every touched format class so font size, bold state, spacing, pagination, and TOC formatting errors are caught while repairing instead of after large batches of edits.
+
+Formatting baseline priority for thesis work:
+
+1. school or department official specification or template
+2. user-provided approved sample or explicit formatting requirement
+3. common Chinese graduation-thesis defaults when no school-specific baseline is available
+
+Thesis rule-precedence clarification:
+
+1. official school template or explicit school rule
+2. latest explicit user correction or confirmed format requirement
+3. approved sample supplied by the user
+4. stable existing thesis state that already matches the above
+5. generic thesis defaults in this skill
+
+If no school-specific specification is available, state that the work is being aligned to a common thesis baseline rather than a confirmed school rule set.
+
+If an earlier repair assumption conflicts with a later explicit user correction, the latest user correction wins immediately.
+
+Thesis cover rule:
+
+- The cover page must be copied directly from the approved school template as the source of truth.
+- Do not redraw, approximate, or locally restyle the cover to "match" the template.
+- On the copied cover, only replace the thesis title and other explicitly required identifying fields.
+- If the current cover is not clearly the template original, restore the cover from the template before continuing other thesis-format repairs.
+- If the school file is a formatting-specification document that contains sample pages, identify the actual thesis sample cover page first. Do not mistake the specification title page for the thesis cover.
+- When multiple visible cover-like pages exist, classify each one semantically before editing:
+  1. specification or instruction cover,
+  2. thesis sample cover,
+  3. translation cover,
+  4. appendix or other sample page.
+  Only the real thesis sample cover may be used as the thesis cover baseline.
+- After copying the cover page, preserve its original paragraph and run structure whenever possible. Do not replace cover fields by rewriting the whole cover block if the template uses underline runs, split placeholder runs, or mixed-run labels.
+- For cover fields such as title, college, major, student ID, student name, advisor, and date, prefer the smallest stable replacement scope:
+  1. existing placeholder run,
+  2. exact placeholder text range,
+  3. full paragraph only if the template paragraph is a simple single-run content line.
+- Treat any appearance of a new manually rebuilt cover layout as a failure, even if the visible result looks close to the template.
+
+### Thesis Format SOP
+
+Use the following execution order as the default standard operating procedure for thesis format work. Do not collapse these phases into one mixed repair pass.
+
+Phase 1. Baseline extraction
+- Read the school template or approved sample first.
+- Extract concrete baseline values for:
+  - cover
+  - front matter pagination
+  - TOC title and TOC entries
+  - level-1 headings
+  - level-2 headings
+  - level-3 headings
+  - Chinese body text
+  - English abstract title and body
+  - Chinese abstract title and body
+  - keywords
+  - figure caption
+  - table caption
+  - references title and body
+  - acknowledgements title and body
+- Do not infer any of the above from generic thesis habits when the template shows an explicit pattern.
+
+Phase 2. Structure repair
+- Repair only structure in this phase:
+  - chapter order
+  - section breaks
+  - page breaks
+  - TOC field presence
+  - caption/image pairing
+  - table block order
+  - references versus acknowledgements separation
+  - appendix presence or absence
+- Do not do full-document style normalization in this phase.
+- Treat front matter as independent high-risk blocks during structure repair:
+  - cover
+  - Chinese abstract
+  - English abstract
+  - TOC
+- Do not merge front-matter repair with main-body repair in one pass.
+- After changing any front-matter block, immediately verify section boundaries, page breaks, and header/footer inheritance before continuing.
+- If a front-matter edit causes later pages to inherit the wrong header or footer, stop and repair section linkage before any more text or style edits.
+
+Phase 3. Pagination and field refresh
+- After structure is stable, repair:
+  - front matter page numbering
+  - main-text page numbering
+  - chapter new-page starts
+  - TOC refresh
+  - field refresh
+- If pagination changes after this point, re-check TOC and caption page references before moving on.
+
+Phase 4. Style unification
+- Only after structure and pagination are stable, run one dedicated style pass for:
+  - headings
+  - body text
+  - figure paragraphs
+  - captions
+  - table cell text
+  - references
+  - acknowledgements
+- In this phase, prefer a style-driven normalization workflow over ad hoc direct-format patching.
+  - Build or override the thesis style set first: body, level-1, level-2, level-3, level-4, Chinese abstract title/body, English abstract title/body, keyword label/content, TOC title, TOC entry levels, references title/body, acknowledgements title/body, figure caption, and table caption.
+  - Then map paragraphs into those styles in batch.
+  - Only use direct paragraph or run formatting for narrow exceptions after the style classes are already correct.
+- Front-matter classes must not silently collapse into body formatting during this phase.
+  - TOC title, TOC entries, Chinese abstract title, Chinese abstract body, Chinese keyword label, Chinese keyword content, English abstract title, English abstract body, English `Keywords` label, and English keyword content must each remain independently addressable format classes.
+  - Do not accept a result where those classes merely look close enough because they inherited `Normal`, body, or another generic text style.
+  - If any of those classes falls back to body-like formatting, treat it as a style-repair failure and continue repairing.
+- If the user's environment or screenshots indicate a WPS/Word style-gallery workflow, treat that as positive guidance toward style-first normalization rather than one-off local formatting.
+- Treat any structure-changing edit made after this phase as invalidating the affected style classes. Re-run style checks for touched regions.
+
+Phase 5. Regression review
+- Do one explicit class-by-class review before declaring completion.
+- Presence checks are not enough:
+  - a figure existing does not prove figure formatting is correct
+  - a TOC refreshing does not prove TOC formatting is correct
+  - a table having the right columns does not prove table font and borders are correct
+  - references being split into separate paragraphs does not prove references formatting is correct
+- After changing any heading class, linked character style, or other theme-driven text style, immediately rerun regression checks for the classes most likely to drift in the same save or refresh cycle:
+  - TOC title
+  - TOC entries
+  - figure captions
+  - table captions
+  - table alignment or centering
+  - references title
+  - references body
+  - chapter-start pagination
+- Do not close a heading-repair task until every affected linked class above has either passed visual review or been explicitly repaired.
+- Do not chase validator cleanliness at the cost of package stability.
+  - If `.docx` validation errors are isolated to template-derived `styles.xml` compatibility items such as `w:uiPriority`, and Word rendering plus exported pages are correct, do not do late unzip-modify-rezip surgery just to force the validator count down.
+  - Prefer a stable, openable, visually correct thesis over XML repack steps that can corrupt relationships or pagination.
+- When the user states a narrow, concrete format target and confirms it explicitly, treat that target as an immediate close-out item rather than leaving it inside a broader “overall formatting” thread.
+  - Examples: true three-line tables, image paragraphs set to single-line spacing, bibliography bracket numbering, front-matter page numbering.
+  - For these items, finish the change end to end, run rendered-page verification for that exact format class, and only then move back to broader cleanup.
+  - Do not keep a user-confirmed concrete format item open across multiple rounds while continuing unrelated formatting work.
+
+Never mix these failure-prone operations casually
+- inserting figures while also normalizing headings
+- rebuilding TOC while also fixing front-matter styles
+- repairing references while also repairing acknowledgements in the same unverified pass
+- applying document-wide body formatting before all structure changes are finished
+
+High-risk blocks that must be treated as independent repair targets
+- cover
+- front matter pagination
+- TOC
+- chapter title pages
+- figure blocks
+- table blocks
+- references block
+- acknowledgements block
+
+Fast-close format items that should be closed individually once explicitly requested
+- table border model
+- image paragraph line spacing
+- caption placement
+- reference numbering style
+- reference-versus-acknowledgements separation
+- chapter new-page starts
+
+Default format-class assumptions to use unless the template or the user explicitly overrides them
+- thesis body tables should be treated as true three-line tables
+- inline thesis image paragraphs should use centered alignment, zero first-line indent, and explicit single-line spacing
+- bibliography and acknowledgements are independent blocks, never one combined block
+
+### Thesis DOCX Toolchain Default
+
+For thesis `.docx` work, the default document-processing path is `officecli` with the `officecli-docx` skill as the first-choice companion tool.
+
+OfficeCLI path-resolution rule:
+
+- Do not assume `officecli` is on `PATH`.
+- On Windows, if `officecli` is not callable by bare command name, explicitly probe common install locations before declaring it unavailable.
+- Preferred probe order on Windows:
+  1. `Get-Command officecli`
+  2. `%LOCALAPPDATA%\OfficeCli\officecli.exe`
+  3. `%LOCALAPPDATA%\Temp\officecli-install\officecli.exe`
+  4. any project-local or skill-local `officecli` binary if the environment documents one
+- If a concrete executable path is found, call that executable directly for all subsequent `officecli` operations in the task instead of continuing to use the bare command name.
+- Only fall back away from `officecli` after both bare-command and explicit-path probes fail.
+
+### OfficeCLI Subskill Routing
+
+When the target artifact is an Office document, route by file type first:
+
+- `.docx`: use `officecli-docx` as the first-choice companion skill
+- `.pptx`: use `officecli-pptx` as the first-choice companion skill
+- `.xlsx`: use `officecli-xlsx` as the first-choice companion skill
+
+For mixed Office tasks, apply the matching `officecli-*` subskill to each artifact type instead of forcing one generic workflow across all files.
+
+If the matching `officecli-*` subskill or the underlying `officecli` executable is unavailable in the environment, fall back to the existing secondary path for that file type and state the fallback briefly.
+
+- Before editing a thesis `.docx`, confirm `officecli` is installed and available, and upgrade it if the installed version is stale.
+- Availability confirmation must include explicit executable-path probing, not just a bare `officecli` shell call.
+- Run the detection pass through `officecli` first. The baseline inspection set is:
+  - `officecli view <file> outline`
+  - `officecli view <file> annotated`
+  - `officecli view <file> issues`
+  - `officecli view <file> text`
+  - `officecli validate <file>`
+  - targeted `officecli get` or `officecli query` calls for headings, TOC, citations, figures, tables, fields, bookmarks, headers, and footers
+- Prefer `officecli` high-level DOM operations such as `set`, `add`, `move`, `remove`, and `batch` for thesis `.docx` edits.
+- For multi-step edits on the same file, prefer `officecli open` / `close` so the repair stays in one controlled save cycle.
+- Fall back in this order:
+  1. `officecli` high-level operations
+  2. `officecli raw` / `raw-set` for XML-level repair
+  3. Word or WPS automation only when field refresh, tracked-change cleanup, layout-only behavior, or application rendering cannot be handled safely through `officecli`
+- Do not default to `python-docx`-only mutation paths for thesis `.docx` work when `officecli` can express the required change.
+- Structural verification through `officecli` does not replace rendered-page verification. Always finish with the thesis visual review requirements in this skill.
+
+### Thesis Workflow Steps
+
+1. Confirm the real system or source material.
+2. Map program modules, figures, tables, and chapters.
+3. Follow the school template as the format baseline.
+   - For the cover page, use the template cover itself rather than a recreated imitation.
+   - For references, do not infer the bibliography list style from general academic convention. Extract the actual bibliography list style from the school template or approved sample first.
+   - When reading a thesis template or approved sample, do not treat the template as a bag of reusable formatting fragments only.
+   - Use machine-vision understanding to infer what each visible block is doing semantically: real title, placeholder title, explanatory note, template instruction, sample body text, sample caption, printing instruction, appendix guidance, or visual example.
+   - Do not mechanically copy text or structure from a template block unless you have first classified whether that block is:
+     1. required final content,
+     2. a placeholder to be replaced,
+     3. a note to be deleted,
+     4. an example to imitate visually but not copy literally.
+   - Many school templates encode rules as visible prose, note boxes, example paragraphs, appendix instructions, or print instructions. Those must be interpreted semantically, not pasted forward into the final thesis.
+   - Template-reading failure mode: copying visible instructional text, example headings, appendix notes, or formatting demonstrations into the final thesis. Treat this as a format-repair failure.
+4. Run a detection pass before repair:
+   - page setup
+   - paragraph and heading styles
+   - format-class consistency scan
+   - tables and captions
+   - figures and figure captions
+   - header and footer
+   - citations and references
+   - bookmarks, cross-references, footnote or endnote references, and Word fields such as `REF`, `PAGEREF`, and `NOTEREF`
+   - for `.docx`, the `officecli` inspection baseline: `view outline`, `view annotated`, `view issues`, `view text`, `validate`, and targeted `get` / `query`
+4a. For front-matter and cover work, the detection pass must also inspect replacement granularity before mutation:
+   - whether the target line is a single-run paragraph
+   - whether the visible placeholder is split across several runs
+   - whether underline geometry is encoded as underline runs rather than table borders or shapes
+   - whether section-local headers and footers are linked to previous sections
+4a1. If a template cover field is built from several runs, do not default to paragraph-level replacement. Record the field as a run-level replacement target.
+4a2. If a copied template page contains mixed instructional text and final-layout content, remove or replace only the instructional content ranges. Do not flatten the page into newly typed paragraphs.
+4a. Before any thesis format mutation, extract a concrete template baseline from the school template or approved sample for every touched format class. Do not start format repair until these classes have a concrete baseline:
+   - level-1 heading
+   - level-2 heading
+   - level-3 heading
+   - level-4 heading if used
+   - Chinese body text
+   - Chinese abstract title
+   - Chinese abstract body
+   - Chinese keyword label
+   - Chinese keyword content
+   - English abstract title
+   - English abstract body
+   - English `Keywords` label
+   - English keyword content
+   - TOC title
+   - TOC entries
+   - figure caption
+   - table caption
+   - references title
+   - references body
+   - acknowledgements title
+   - acknowledgements body
+4a1. If the user asks to "check formatting", "align to template", "compare with the sample", or similar wording for a thesis, treat `level-1 heading`, `level-2 heading`, and `level-3 heading` as touched format classes by default unless the user explicitly scopes the task narrower.
+4a2. For heading classes, the extracted template baseline must be written down concretely before mutation, at minimum covering:
+   - font family
+   - font size
+   - bold state
+   - color
+   - alignment
+   - space before
+   - space after
+   - line spacing
+   - page-start behavior when relevant
+4b. Do not infer final thesis formatting from Word built-in heading styles alone. A paragraph using `heading 1/2/3` is not accepted until its font, size, bold state, color, spacing, alignment, and pagination behavior match the extracted template baseline.
+4b1. A heading class is still failing if it uses the expected outline level or style name but differs from the template in any required visual field.
+4b2. During thesis style repair, do not rely primarily on scattered direct formatting when the same result can be achieved by correcting the style definition and reassigning the paragraph to that style. A thesis that looks temporarily correct only because of layered direct formatting is unstable and should not be accepted as repaired.
+4c. Template extraction must combine structure inspection and visual-semantic interpretation.
+   - Structural inspection answers: what styles, fields, captions, headers, and sections exist.
+   - Visual-semantic interpretation answers: what each block means in the template and whether it should survive into the final paper.
+   - A format pass is incomplete if it copies template instructions or sample text because only structural style matching was performed without semantic interpretation.
+4d. During format repair, template comparison is not a one-time pre-read only. For each touched format class, render or visually inspect:
+   - the template page containing that class
+   - the thesis page containing that class
+   - the current repaired result after each meaningful fix batch
+   Then compare them directly for font size, bold state, alignment, spacing, line spacing, indentation, pagination, and whether the class boundary is preserved.
+5. Keep content and formatting as separate passes.
+6. Use a stable format-repair order:
+   - page setup
+   - paragraph formatting
+   - citations
+   - references
+   - special headings and section titles
+   - header and footer
+   - `officecli` high-level DOM repair before any lower-level fallback
+   - `officecli raw` / XML-level repair only when the high-level path cannot safely express the required structure
+   - Word or WPS automation only for field refresh, tracked-change cleanup, or layout behaviors that cannot be verified safely otherwise
+6a. For format-repair-only work, every repair batch must end with two parallel checks before the next batch:
+   - structure check through `officecli` (`outline`, `issues`, `get`, `query`)
+   - visual comparison between the repaired thesis page and the matching template page for the touched class
+   Do not continue with large later-stage repairs if the current batch still visibly diverges from the template in size, bold state, spacing, or pagination.
+7. Stop content changes once the user says the content is acceptable, then do a format-only pass.
+8. Re-check the original comments or source annotations before closing.
+9. When revising or generating a thesis chapter structure, preserve or restore one chapter-summary subsection at the end of every major chapter by default, unless the school template or the user explicitly requires a different structure.
+10. In thesis outputs, all text must be black by default. This includes body text, titles, captions, figure labels, table text, generated diagram text, screenshot annotations, GUI text used for thesis screenshots, and result-image text overlays. Do not use colored text unless the user explicitly overrides this rule.
+10a. Treat highlight fills, paragraph shading, and theme-color residue as the same class of failure as non-black text when the template expects plain black-on-white thesis output.
+11. Every major thesis chapter must start on a new page by default. Do not leave a major chapter heading in leftover space at the bottom of the previous page unless the school template or the user explicitly requires a different layout.
+12. Thesis body citations must use superscript formatting by default. Unless the school template or the user explicitly requires a different citation content form, every citation marker must retain full bracketed numeric content such as `[数字]` rather than a bare number.
+13. Do not add new appendices, appendix chapters, or appendix subsections unless at least one of the following is true:
+   - the user explicitly asks for them
+   - the school template explicitly requires them
+   - they already exist in the source thesis and are being repaired rather than newly invented
+14. Once the user's content direction is clear and the task becomes format repair, freeze thesis scope. Do not expand the paper with new appendices, extra management sections, or additional explanatory chapters merely to make the paper look fuller.
+15. The controlling execution order for thesis format work is the `Thesis Format SOP` defined above. Do not restate, skip, or override those phases ad hoc in later repair passes.
+16. If structure repair and style repair are both needed, report progress by phase and do not declare the thesis "finished" after structure repair alone.
+
+### Thesis Citation Rules
+
+Apply these citation rules in every thesis-related mode, including thesis generation, thesis revision, thesis-only work, and format-repair-only work whenever citations are present or may need repair.
+
+1. Citation handling is mandatory during both thesis generation and thesis modification. Do not skip the citation pass merely because the user asked for format repair.
+2. Final thesis body citations must go through a dedicated superscript-citation workflow. Superscript is the default required citation form unless the school template or the user explicitly requires a different form. Unless the school template or the user explicitly overrides it, the final citation content must retain bracketed numeric form such as `[数字]` rather than a bare superscript number.
+3. Before inserting or repairing citations, remove or normalize any existing citation residue in the affected body paragraphs so the final body text uses one consistent citation form.
+3a. Treat any remaining ordinary inline citation residue such as non-superscript `[1]`, bare unbracketed superscript numbers, `[1][2]`, `[1-3]`, or `[1,2]` in the final thesis body as a citation-format failure unless the school template or the user explicitly requires that exact form.
+4. Unless the school template or the user explicitly overrides it, citations must be numbered by first appearance order in the thesis body.
+5. Unless the school template or the user explicitly overrides it, one sentence should normally carry one citation point only.
+6. Unless the school template or the user explicitly overrides it, one citation point may contain only one citation number. Do not use merged forms such as `[1-3]`, `[1,2]`, or any equivalent multi-number citation inside one citation marker.
+7. If one sentence needs support from multiple sources, do not compress several source numbers into one citation marker by default. Reorganize the sentence or citation layout so the final result still respects the one-marker-one-number rule, unless the user explicitly requires a different format.
+7a. Unless the school template or the user explicitly overrides it, every thesis body citation marker must be placed immediately to the left of the punctuation mark it belongs to. Do not leave a citation marker to the right of a Chinese or English sentence-ending or clause-ending punctuation mark.
+8. Do not claim citation compliance from visible appearance alone. Verify that the final DOCX run structure still contains superscript citation runs where superscript style is expected and that those runs preserve the intended bracketed numeric form when bracketed form is required.
+9. If the document already uses superscript literature citations, preserve that style through all later revisions. Do not downgrade them into ordinary bracket text.
+10. After any citation rewrite pass, explicitly re-check numbering continuity, first-appearance order, repeated-citation consistency, punctuation-side placement, and whether any sentence now contains uncontrolled duplicate citation markers or merged multi-number citation markers.
+
+When doing automated thesis-format repair, keep a repair record with location, check item, original value, new value, and severity whenever practical so the result can be audited or summarized later.
+
+Treat these as common manual-confirmation items unless the environment clearly supports them safely:
+
+- TOC refresh
+- header rule lines
+- exact image or formula micro-positioning
+- footnote formatting
+- other layout details that cannot be verified reliably from DOCX structure alone
+
+DOCX field safety rule:
+
+- For thesis `.docx`, inspect affected zones through `officecli get`, `officecli query`, or `officecli raw` before any mutation. Do not patch field-bearing regions blindly.
+- Before rewriting thesis paragraphs in `.docx`, detect whether the target area contains bookmarks or Word fields such as `REF`, `PAGEREF`, `NOTEREF`, caption cross-references, bibliography cross-references, or footnote/endnote references.
+- Do not default to whole-paragraph replacement in areas that participate in cross-references.
+- Prefer `officecli` high-level operations for in-place changes and fall back to `officecli raw` only when field, bookmark, tab-stop, or tracked-change structure requires XML-level handling.
+- If bibliography items are referenced by superscript citations, preserve or restore the referenced bookmark names before refreshing fields.
+- After automated edits, run `officecli validate`, `officecli view issues`, and targeted `officecli view annotated` or `get` checks on affected citation and field zones before final visual review.
+- When using `officecli set` to change heading levels or formatting classes, do not stop after the structural style assignment. Immediately verify the resulting paragraph's font, size, bold state, color, spacing, alignment, and page-break behavior against the extracted template baseline.
+- Do not apply broad format mutations to thesis paragraphs by selector unless you first confirm the selector excludes TOC entries, captions, field-bearing paragraphs, and other non-body classes. A broad selector that accidentally changes TOC lines, captions, or appendices is a repair failure.
+- After automated edits, refresh fields and then explicitly search the whole document for `错误！未定义书签` and `Error! Bookmark not defined`.
+- Also check for tracked revisions or deletion balloons after Word-based repairs, and accept or clear them before final delivery.
+- When rewriting citation-bearing thesis paragraphs, do not collapse superscript citation runs back into plain-text bracket strings.
+- If citation numbers must be renumbered, perform that change through a citation-aware method rather than plain whole-paragraph text replacement.
+
+DOCX mutation safety rule:
+
+- Do not use whole-paragraph replacement such as assigning `paragraph.text`, broad paragraph rewrites in other DOCX libraries, or bulk text overwrite on any thesis paragraph that may contain drawings, anchored images, bookmarks, TOC bookmarks, field artifacts, or complex direct formatting.
+- For thesis `.docx`, prefer `officecli` path-targeted edits over document-wide paragraph rewrites.
+- Before rewriting a paragraph in `.docx`, inspect whether its `officecli get` / `raw` view or the immediately adjacent paragraph XML contains `w:drawing`, `bookmarkStart`, `bookmarkEnd`, `fldChar`, `instrText`, or nontrivial `rPr` font overrides.
+- If any of those are present, treat the paragraph as structure-bearing and use a safer method or leave it untouched until a page-level plan is clear.
+- For 3 or more operations on the same thesis `.docx`, use `officecli open` / `close` so the save cycle remains controlled.
+- After any figure-related or caption-related repair pass, compare the total `w:drawing` count before and after. If the count drops unexpectedly, stop and revert.
+- When writing Chinese titles, captions, or font names through scripts, do not trust shell source encoding by default. Use a Unicode-safe construction path and verify the resulting document XML does not contain damaged font values such as `w:rFonts="??"`.
+- After each meaningful thesis `.docx` repair batch, rerun `officecli view issues`, `officecli view outline`, `officecli view text`, and `officecli validate` before the rendered-page verification pass.
+- When using Word/WPS automation for thesis repair, default to silent save behavior: suppress alerts, avoid interactive save dialogs, and prefer direct save/export or temp-file replacement so the user is not interrupted by ordinary confirmation prompts.
+
+### Thesis Figure And Screenshot Rules
+
+1. When the thesis needs figures, screenshots, tables, or diagram replacement, automatically run the thesis image-generation rule set.
+2. If the user provides sample figures, template screenshots, or approved visual examples, treat them as the highest-priority style source and generate images to match them.
+3. Apply the same figure-generation rule set in full-thesis writing, thesis-only writing, and thesis revision tasks. Do not downgrade this requirement just because the user is only modifying an existing thesis.
+4. A thesis is incomplete if required figures are still missing, mismatched to the chapter semantics, or not actually embedded in the final document.
+5. Before generating any thesis diagram such as a technical route figure, architecture figure, or flowchart, extract a concrete style baseline from the school template, the user-provided sample, or an approved existing figure in the same paper. Match caption position, overall density, line style, font style, and whether the paper expects plain print-oriented visuals or presentation-style visuals.
+6. When the environment supports draw.io or diagrams.net and the task is a thesis diagram such as ER, architecture, technical route, use case, or flowchart, use draw.io as the required source-of-truth authoring workflow by default. Do not default to ad hoc raster drawing scripts when draw.io is available, unless the user explicitly asks for another generation path.
+7. If the user provides a diagram sample, reproduce its notation and visual language in draw.io rather than translating it into a different notation on your own.
+8. Do not deliver script-generated SVG, raster, or Office-drawn figures containing Chinese text unless the actual rendered output has been checked for Chinese font correctness. If the render path cannot guarantee Chinese text, switch to a safer generation path or stop and fix the rendering first.
+9. For thesis figures, default to restrained academic styling. Avoid decorative gradients, presentation-style color blocks, or UI-infographic aesthetics unless the template or user example clearly uses them.
+10. After figure generation and before final delivery, run one visual verification pass on the actual rendered figure and one placement verification pass after insertion into the `.docx`.
+11. Thesis figures must not rely on colored text for emphasis. All figure text, labels, legends, and annotations should render in black so the document remains valid for grayscale printing and school formatting.
+12. Thesis figure repair must run in single-figure increments: modify one figure, render the affected page, visually verify that page, and only then continue to the next figure.
+13. If a figure still appears crowded, duplicated, missing, clipped, or mismatched to its caption after page rendering, that figure task is still failing. Do not continue unrelated thesis edits until that figure block is corrected.
+14. Before a risky figure-repair pass, preserve or identify one clean rollback baseline of the thesis `.docx`. If later edits cause duplicated figures, lost figures, broken captions, TOC pollution, or collateral table damage, stop and return to the clean baseline immediately.
+
+### Thesis Image Placement Rules
+
+1. Any thesis task involving inserted figures, replaced figures, missing figures, figure overlap, text covering images, detached captions, unreadable figures, or figure-page layout anomalies must enter a dedicated figure-repair workflow. Do not treat these as ordinary paragraph-format edits.
+2. Insert or replace thesis images in a way that keeps each figure tightly coupled to its related text and caption.
+3. Every thesis figure must be treated as an isolated figure block with this required structure:
+   - image paragraph
+   - caption paragraph
+   - following body paragraph
+4. The figure object must be placed in the dedicated image paragraph immediately above its own caption paragraph.
+   - Do not leave a figure embedded in a body-text paragraph.
+   - Do not leave a figure embedded in a caption paragraph.
+   - Do not leave a figure anchored several lines away from its caption.
+5. The default and preferred wrap model for thesis figures is `inline with text`.
+   - Do not leave wrap behavior to Word or WPS automatic interpretation.
+   - Do not use any floating wrap form for thesis figures.
+   - Do not use one-figure-per-page as the default workaround for image-layout problems.
+6. Do not use floating-picture fallback rules such as `top-and-bottom`, square wrapping, tight wrapping, behind-text, in-front-of-text, or any other non-inline wrap form for thesis figures.
+7. When image insertion causes overlap or text-flow corruption, first rebuild the figure block back to a dedicated image paragraph plus `inline with text`, then correct paragraph formatting, spacing, and size. Do not rely on simple image shrinking as the primary fix.
+8. Preserve a one-to-one relationship between image paragraph and caption paragraph. Do not let one image visually swallow later captions or neighboring figures.
+9. If a figure paragraph is styled like a caption, heading, or another fixed-line-height style, normalize it before accepting the layout.
+10. When rebuilding a figure block, create or reuse exactly one image paragraph immediately above the caption, move the figure into that paragraph, and verify that no stray placeholder character, empty body line, or residual drawing remains in the surrounding body paragraphs.
+11. Treat the image paragraph format itself as mandatory repair scope. An image paragraph must not keep body-text formatting such as first-line indent or fixed `22pt` line spacing, and the image paragraph must always be reset to single line spacing after image insertion.
+12. After placing a figure, normalize the image paragraph to centered alignment, zero first-line indent, zero left and right indent, zero spacing before and after, and explicit single line spacing. Do not leave the image paragraph on auto, multiple, exactly, or any other non-single line-spacing mode.
+13. When replacing an overcrowded system flowchart or technical route figure, remove the old figure from the page layout first, then insert the simplified replacement, then render the page again. Never assume the old figure disappeared automatically.
+14. If the replacement is still not readable after simplification, reduce node count and text density again instead of shrinking the same crowded graph.
+15. Figure repair must run one figure at a time:
+   - identify the target caption
+   - identify the actual corresponding image object
+   - repair the image paragraph, inline placement, paragraph line spacing, and size
+   - verify image-caption pairing
+   - verify page-level visual result
+   - only then continue to the next figure
+16. If rendered-page verification is unavailable, unclear, inconsistent with the user-reported environment, or still shows crowding, overlap, clipping, burial, detachment, or unreadability, stop the figure-repair chain and mark that figure block as unverified.
+17. If text appears to cover, intrude into, or visually cut through an image, assume the figure block structure or paragraph formatting is broken. Do not try to fix this only by resizing the image; first normalize the image back to its dedicated inline paragraph with single line spacing, then re-render the page.
+18. Figure size is part of acceptance. A figure that is technically visible but too small to read is still a failed figure.
+19. The caption paragraph must be the immediate next paragraph below the image paragraph. No blank paragraph is allowed between the image paragraph and the caption paragraph.
+20. The caption paragraph must contain only the figure caption text. Do not merge any following heading, body sentence, or explanatory text into the caption paragraph.
+21. The paragraph immediately below the caption must be the next heading or explanatory body paragraph in its own paragraph, with heading or body formatting rather than caption formatting.
+21a. A figure and its caption must stay on the same page. If the remaining space on the current page is insufficient for both, move the whole figure block to the next page instead of splitting the image and caption across pages.
+21b. A table caption and the corresponding table must stay on the same page. If the current page does not have enough room for the caption plus the beginning of the table, move the whole table block to the next page.
+22. If the rendered page shows the caption to the right of the image instead of directly below it, treat that figure block as structurally broken and rebuild it.
+23. After rebuilding a figure block, explicitly verify paragraph style class assignment:
+   - the image paragraph must use figure-paragraph formatting
+   - the image paragraph must use explicit single line spacing
+   - the caption paragraph must use figure-caption formatting
+   - the following explanatory paragraph must use body-text formatting unless it is a real heading
+24. Treat any of these as a failed figure block:
+   - caption paragraph formatted like a heading or body paragraph
+   - explanatory body paragraph formatted like a caption or heading
+   - heading paragraph formatted like a caption
+   - the figure is on one page while its caption is on the next page
+   - the table caption is on one page while the corresponding table starts on the next page
+
+### Thesis Format Class Review
+
+Treat thesis format review as a class-by-class audit, not a broad "headings" versus "body" check.
+
+Mandatory independent review classes:
+
+- static TOC title
+- static TOC entries
+- level-1 headings
+- level-2 headings
+- level-3 headings
+- Chinese body text
+- Latin-script and numeric body text
+- Chinese abstract title
+- English abstract title
+- Chinese abstract body
+- English abstract body
+- Chinese keywords
+- English keywords
+- superscript citation style
+- figure caption style
+- table caption style
+- references title
+- references body
+- acknowledgements title
+- acknowledgements body
+- figure numbering labels
+- table numbering labels
+- table style
+- figure style
+
+For each class above:
+
+- perform a full-document pass, not sample inspection
+- verify font, size, bold state, spacing, line spacing, indentation, and alignment
+- also verify class-specific rules where applicable, such as hanging indent for references, centered layout for captions, three-line-table rules, or image sizing and wrap consistency
+- for any class touched by direct paragraph rewriting, also check paragraph-level formatting and run-level formatting separately so residual direct formatting cannot pass unnoticed
+- for any class touched by structure-changing edits, re-check the style class after the structural pass even if it was previously repaired
+
+Do not merge adjacent classes just because they appear visually similar. For example, Chinese body text and Latin-script or numeric body text must still be checked separately when the template or school rules distinguish them.
+
+### Thesis Format Class Checklist Template
+
+Use the checklist below as the default execution template during thesis format review.
+
+1. Level-1 headings
+   - Full-document pass
+   - Check font, size, bold state, spacing before and after, line spacing, alignment
+2. Level-2 headings
+   - Full-document pass
+   - Check font, size, bold state, spacing before and after, line spacing, alignment
+3. Level-3 headings
+   - Full-document pass
+   - Check font, size, bold state, spacing before and after, line spacing, alignment
+4. Chinese body text
+   - Full-document pass
+   - Check font, size, first-line indent, spacing before and after, line spacing, alignment
+5. Latin-script and numeric body text
+   - Full-document pass
+   - Check font family, size, baseline consistency, mixed-language spacing, alignment
+6. Static TOC title
+   - Full-document pass
+   - Check font, size, bold state, alignment, spacing before and after
+7. Static TOC entries
+   - Full-document pass
+   - Check font family split between Chinese text and page numbers, indent ladder, dot leader consistency, and page-number correctness after any structure change
+8. Chinese abstract title
+   - Full-document pass
+   - Check font, size, bold state, alignment, spacing before and after
+9. English abstract title
+   - Full-document pass
+   - Check font, size, bold state, alignment, spacing before and after
+10. Chinese abstract body
+   - Full-document pass
+   - Check font, size, indent, line spacing, spacing before and after, alignment
+11. English abstract body
+   - Full-document pass
+   - Check font, size, indent, line spacing, spacing before and after, alignment
+12. Chinese keywords
+   - Full-document pass
+   - Check label style, content font, separator spacing, alignment
+13. English keywords
+   - Full-document pass
+   - Check label style, content font, separator spacing, alignment
+14. Superscript citation style
+   - Full-document pass
+   - Check superscript state, numbering order by first appearance, one-sentence citation control, one-marker-one-number compliance, repeated-citation consistency, and whether any plain-text bracket citation residue remains in thesis body paragraphs
+15. Figure caption style
+   - Full-document pass
+   - Check caption font, color, bold state, spacing, alignment, line spacing, and whether any custom style residue remains
+16. Table caption style
+   - Full-document pass
+   - Check caption font, color, bold state, spacing, alignment, line spacing, and whether any custom style residue remains
+17. References title
+   - Full-document pass
+   - Check font, size, bold state, alignment, spacing before and after
+18. References body
+   - Full-document pass
+   - Check font, size, hanging indent, line spacing, spacing before and after, numbering consistency
+   - First confirm whether the template bibliography entries are explicitly numbered or unnumbered before applying any list formatting.
+   - Do not add visible bibliography item numbers unless the template or approved sample clearly uses them.
+19. Acknowledgements title
+   - Full-document pass
+   - Check font, size, bold state, alignment, spacing before and after
+20. Acknowledgements body
+   - Full-document pass
+   - Check font, size, indent, line spacing, spacing before and after, alignment
+21. Figure numbering labels
+   - Full-document pass
+   - Check numbering format, spacing between label and caption text, punctuation consistency
+22. Table numbering labels
+   - Full-document pass
+   - Check numbering format, spacing between label and caption text, punctuation consistency
+23. Table style
+   - Full-document pass
+   - Check border rules, font size, cell alignment, row height, header style, three-line-table compliance when required
+   - Default three-line tables to retaining internal vertical lines unless the user or school template explicitly requires a border model without them
+24. Figure style
+   - Full-document pass
+   - Check image size consistency, centering, wrap mode, distance from surrounding text, caption pairing
+
+Three-line-table note:
+
+- Default assumption: three-line tables retain internal vertical lines.
+- If the user or school template explicitly defines another three-line-table variant, follow that local definition exactly.
+- Never silently replace the default or user-confirmed three-line table style with a generic publishing-style booktabs table.
+- When template examples and default conventions conflict, prioritize the confirmed template/example.
+25. Figure paragraph style
+   - Full-document pass
+   - Check that each figure sits in its own image paragraph with centered alignment, zero first-line indent, and explicit single line spacing
+26. Table cell text style
+   - Full-document pass
+   - Check Chinese font, Latin font, size, bold state of header row, and consistency across all business tables
+27. References formatting
+   - Full-document pass
+   - Check numbering continuity, hanging indent, spacing consistency, and that references remain separated from acknowledgements or other end-matter content
+
+Completion rule:
+
+- Do not close the task until every checklist class above has been reviewed across the whole document.
+- If any class still contains inconsistent formatting, continue revising before final delivery.
+
+### Thesis Format Check Record Template
+
+Use the record structure below when executing or summarizing a thesis format pass.
+
+For each format class, record:
+
+- Class Name
+- Scope
+- Required Fields
+- Pass Criteria
+- Common Defects
+- Fix Action
+- Status: pass | fail | needs-manual-review
+
+Recommended class records:
+
+1. Level-1 headings
+   - Scope: all first-level chapter titles in the main text
+   - Required Fields: font, size, bold state, alignment, spacing before, spacing after, line spacing
+   - Pass Criteria: every level-1 heading matches the same format specification across the whole document
+   - Common Defects: one heading uses a different font or size, extra bolding, inconsistent center alignment, inconsistent spacing
+   - Fix Action: normalize all level-1 headings to the agreed style, then rerun the full pass
+2. Level-2 headings
+   - Scope: all second-level headings in the main text
+   - Required Fields: font, size, bold state, alignment, spacing before, spacing after, line spacing
+   - Pass Criteria: every level-2 heading matches the same format specification across the whole document
+   - Common Defects: mixed font families, one-off spacing drift, inconsistent punctuation spacing after numbering
+   - Fix Action: normalize all level-2 headings and recheck numbering plus style inheritance
+3. Level-3 headings
+   - Scope: all third-level headings in the main text
+   - Required Fields: font, size, bold state, alignment, indent, spacing before, spacing after, line spacing
+   - Pass Criteria: every level-3 heading matches the same format specification across the whole document
+   - Common Defects: some third-level headings are plain body paragraphs, some keep first-line indent while others do not
+   - Fix Action: convert all third-level headings to the same heading style and remove stray direct formatting
+4. Chinese body text
+   - Scope: all Chinese prose paragraphs in the main text, excluding captions and references
+   - Required Fields: font, size, first-line indent, alignment, spacing before, spacing after, line spacing
+   - Pass Criteria: all Chinese body paragraphs use the same body-text specification unless the template explicitly defines a special case
+   - Common Defects: some paragraphs use `Normal`, others use a thesis body style; indent drift; line spacing drift
+   - Fix Action: normalize all Chinese body paragraphs to the thesis body standard and then rerun a full pass
+5. Latin-script and numeric body text
+   - Scope: English words, abbreviations, identifiers, formulas-in-text, and number-heavy paragraphs inside the main text
+   - Required Fields: Latin font family, size, baseline consistency, mixed-language spacing, alignment
+   - Pass Criteria: Latin-script and numeric content follows one consistent mixed-language rule throughout the document
+   - Common Defects: inconsistent ASCII font fallback, irregular spacing around English words or numbers in Chinese text
+   - Fix Action: normalize Latin font fallback and fix mixed-language spacing rules document-wide
+6. Static TOC title
+   - Scope: the visible TOC title only
+   - Required Fields: font, size, bold state, alignment, spacing before, spacing after
+   - Pass Criteria: the TOC title matches the approved template style exactly
+   - Common Defects: title left in body style, wrong bold state, wrong centering
+   - Fix Action: reset the TOC title explicitly instead of relying on inherited style
+   - Dependency Rule: if heading styles, title-like styles, or theme-driven character styles were changed earlier in the pass, recheck the TOC title even if it was not edited directly
+7. Static TOC entries
+   - Scope: all visible TOC lines and page-number lines
+   - Required Fields: Chinese entry font, Latin and numeric font, indent ladder, leader dots, page-number correctness
+   - Pass Criteria: all TOC lines match the intended hierarchy and point to the current document structure
+   - Common Defects: stale entries after renumbering, correct text with wrong page numbers, wrong fonts on chapter lines, missing newly added chapter-summary entries
+   - Fix Action: regenerate or rewrite the entire static TOC after structure changes, then rerun a full TOC pass
+   - Boundary Rule: TOC entries must not be accepted when they are effectively generic body paragraphs with dots and page numbers; they must remain a distinct TOC class rather than a disguised body-text class
+8. Chinese abstract title
+   - Scope: the Chinese abstract heading only
+   - Required Fields: font, size, bold state, alignment, spacing before, spacing after
+   - Pass Criteria: matches the approved abstract-title style
+   - Common Defects: wrong font family, not centered, inconsistent spacing from abstract body
+   - Fix Action: apply the abstract-title standard and recheck page layout
+9. English abstract title
+   - Scope: the English abstract heading only
+   - Required Fields: font, size, bold state, capitalization, alignment, spacing before, spacing after
+   - Pass Criteria: matches the approved English abstract-title style
+   - Common Defects: wrong capitalization, inconsistent font family, misaligned heading
+   - Fix Action: normalize title text and style, then verify with the Chinese abstract page
+10. Chinese abstract body
+   - Scope: all Chinese abstract paragraphs
+   - Required Fields: font, size, indent, alignment, spacing before, spacing after, line spacing
+   - Pass Criteria: all Chinese abstract paragraphs follow the same abstract-body style
+   - Common Defects: body copied from main text without abstract-specific formatting, inconsistent keyword distance, content replaced but direct formatting residue remains
+   - Fix Action: apply abstract-body formatting separately from main text formatting and verify paragraph-level plus run-level formatting
+   - Boundary Rule: do not accept a Chinese abstract body that has fallen back to generic body style or `Normal` simply because the visible font is close; the Chinese abstract body is its own format class
+11. English abstract body
+   - Scope: all English abstract paragraphs
+   - Required Fields: font, size, indent, alignment, spacing before, spacing after, line spacing
+   - Pass Criteria: all English abstract paragraphs follow the same English abstract-body style
+   - Common Defects: wrong font family, uneven spacing, paragraph indentation inconsistent with English abstract rules
+   - Fix Action: normalize all English abstract paragraphs and recheck line wrapping
+   - Boundary Rule: do not accept an English abstract body that has fallen back to generic body style or `Normal`; the English abstract body is its own format class
+12. Chinese keywords
+   - Scope: the Chinese keyword line or keyword block
+   - Required Fields: label style, content font, separator punctuation, spacing, alignment
+   - Pass Criteria: the `关键词：` label and the keyword content after it each match the approved format, and they are not collapsed into one merged format
+   - Common Defects: wrong separator, mixed fonts, uneven spacing after `关键词`, and label-text formatting incorrectly merged with keyword-content formatting
+   - Fix Action: rewrite the keyword line with the approved punctuation and styling, treating the `关键词：` label and the following keyword content as separate formatting targets
+   - Page-Level Check: verify the Chinese keyword line is not skipped during abstract repair and remains inside the Chinese abstract block
+   - Boundary Rule: the keyword label and keyword content must not both ride on a generic body-text style; each side must still match its dedicated keyword formatting target
+13. English keywords
+   - Scope: the English keyword line or keyword block
+   - Required Fields: label style, content font, capitalization, separator punctuation, spacing, alignment
+   - Pass Criteria: the `Keywords:` label and the keyword content after it each match the approved format, and they are not collapsed into one merged format
+   - Common Defects: `Keywords` font mismatch, inconsistent capitalization, comma spacing drift, and label-text formatting incorrectly merged with keyword-content formatting
+   - Fix Action: rewrite the English keyword line with the approved styling, treating the `Keywords:` label and the following keyword content as separate formatting targets
+   - Page-Level Check: verify the English keyword line stays with the English abstract block unless the template explicitly requires otherwise
+   - Boundary Rule: the `Keywords:` label and the following keyword content must not both fall back to generic body-text styling; they remain separate keyword-format targets even when they share one paragraph
+14. Superscript citation style
+   - Scope: all thesis body paragraphs that contain literature citations
+   - Required Fields: superscript state, bracket enclosure, citation numbering order, one-sentence citation count, repeated-citation consistency, punctuation-side placement, absence of inconsistent citation residue
+   - Pass Criteria: citations render as superscript runs where superscript style is expected, citation content keeps bracketed numeric form such as `[数字]` unless explicitly overridden, numbering follows first appearance order unless overridden, no sentence contains uncontrolled duplicate citation markers, every citation sits on the left side of its punctuation mark unless explicitly overridden, and no inconsistent citation residue remains in the final thesis body
+   - Common Defects: plain baseline `[数字]` left in body text, bare superscript `1` where bracketed form is required, several scattered citation markers in one sentence, numbering out of first-appearance order, superscript lost after paragraph rewriting, citation marker placed to the right of its punctuation mark
+   - Fix Action: normalize citations through a citation-aware rewrite path, preserve or restore bracketed numbering where required, renumber by first appearance, move every citation marker to the left side of its punctuation mark, split or rewrite same-sentence multi-source cases when appropriate, then rerun the full citation pass
+15. Figure caption style
+   - Scope: all figure-caption paragraphs
+   - Required Fields: style name, font, size, color, alignment, spacing, line spacing
+   - Pass Criteria: all figure captions share one approved caption format and contain no custom-color residue
+   - Common Defects: one caption inherits a custom blue style, some captions use body style, line spacing differs across captions
+   - Fix Action: normalize all figure-caption paragraphs together and then rerun figure-numbering review
+   - Residue Guard: a figure-caption class still fails if either the caption style or any caption paragraph keeps residual `themeColor`, `w14:textFill`, explicit direct color, paragraph-level run properties, or other Office default theme fill
+16. Table caption style
+   - Scope: all table-caption paragraphs
+   - Required Fields: style name, font, size, color, alignment, spacing, line spacing
+   - Pass Criteria: all table captions share one approved caption format and contain no custom-color residue
+   - Common Defects: captions mixed between `Normal` and a custom style, stale direct formatting after text replacement, inconsistent centering
+   - Fix Action: normalize all table-caption paragraphs together and rerun table-numbering review
+   - Residue Guard: a table-caption class still fails if either the caption style or any caption paragraph keeps residual `themeColor`, `w14:textFill`, explicit direct color, paragraph-level run properties, or other Office default theme fill
+   - Layer Check: before passing the table-caption class, inspect all three layers together:
+     1. style definition
+     2. paragraph-level direct formatting
+     3. run-level direct formatting
+     A caption does not pass until all three layers are free of conflicting color or theme residue
+17. References title
+   - Scope: the references heading only
+   - Required Fields: font, size, bold state, alignment, spacing before, spacing after
+   - Pass Criteria: matches the approved references-title style
+   - Common Defects: title accidentally inherits body style, incorrect page break handling
+   - Fix Action: reset the heading style and then recheck page position
+18. References body
+   - Scope: all reference entries
+   - Required Fields: font, size, hanging indent, alignment, spacing before, spacing after, line spacing, numbering or bracket format
+   - Pass Criteria: every reference entry follows one consistent references-body format and citation layout rule
+    - Common Defects: mixed hanging indent, inconsistent bracket numbering, copied entries with different fonts or line spacing
+    - Common Defects: mixed hanging indent, inconsistent bracket numbering, copied entries with different fonts or line spacing, bibliography list wrongly converted into a numbered list when the template is unnumbered
+    - Fix Action: normalize all entries together instead of editing isolated lines, and always re-check against the template bibliography style before finalizing
+    - Direct-Indent Guard: a references-body class still fails if paragraph-level direct formatting keeps residual `firstLineIndent`, `leftIndent`, `hangingIndent`, or `rightIndent` values that conflict with the approved bibliography layout, even when the paragraph style name is already correct
+    - Verification Rule: references-body repair must inspect both:
+      1. the references-body style definition
+      2. each paragraph's direct indent values
+      Do not accept the bibliography block until those indent values are consistent across all entries
+    - Boundary Guard: do not batch-rewrite references by unstable paragraph indices after TOC rebuilds, figure insertion, or other structure changes. Use stable paragraph identifiers, a verified references-only selector, or a freshly revalidated start/end boundary before every bulk mutation
+    - Spillover Rule: if a references-body batch edit can spill into appendices, acknowledgements, or other later blocks, the targeting method is unsafe and must not be used
+19. Acknowledgements title
+   - Scope: the acknowledgements heading only
+   - Required Fields: font, size, bold state, alignment, spacing before, spacing after
+   - Pass Criteria: matches the approved acknowledgements-title style
+   - Common Defects: inconsistent heading level styling, wrong page break behavior
+   - Fix Action: apply the heading standard and verify final pagination
+20. Acknowledgements body
+   - Scope: all acknowledgements paragraphs
+   - Required Fields: font, size, indent, alignment, spacing before, spacing after, line spacing
+   - Pass Criteria: all acknowledgements paragraphs follow one consistent body style
+   - Common Defects: copied body paragraphs retain inconsistent direct formatting
+   - Fix Action: normalize all acknowledgements paragraphs together
+21. Figure numbering labels
+   - Scope: all figure labels and figure caption numbering
+   - Required Fields: label pattern, spacing between number and caption text, punctuation, alignment
+   - Pass Criteria: figure numbering format is identical throughout the document
+   - Common Defects: `图1` versus `图 1`, inconsistent spaces, mixed punctuation
+   - Fix Action: normalize numbering text and caption spacing across all figures
+22. Table numbering labels
+   - Scope: all table labels and table caption numbering
+   - Required Fields: label pattern, spacing between number and caption text, punctuation, alignment
+   - Pass Criteria: table numbering format is identical throughout the document
+   - Common Defects: mixed spacing rules, inconsistent caption placement above or below the table
+   - Fix Action: normalize table numbering and caption placement together
+23. Table style
+   - Scope: all tables in the thesis
+   - Required Fields: border model, font size, header-row style, cell alignment, row spacing, width behavior
+   - Pass Criteria: all tables follow the same approved table style unless a different table type is explicitly required
+   - Common Defects: some tables are three-line tables while others use grid borders, inconsistent header emphasis, mixed font sizes
+   - Fix Action: normalize all tables by type and then rerun a full-document table pass
+24. Figure style
+   - Scope: all inserted figures and screenshots
+   - Required Fields: size consistency, centering, wrap mode, distance from surrounding text, caption pairing
+   - Pass Criteria: figures follow the same placement and sizing logic and remain visually consistent with captions
+   - Common Defects: oversized screenshots, inconsistent centering, mixed wrap modes, detached captions
+   - Fix Action: normalize placement, size, and caption relationship for all figures
+
+Execution rule:
+
+- Record each class explicitly as `pass`, `fail`, or `needs-manual-review`.
+- A thesis format pass is incomplete if any required class has not been recorded.
+- A thesis format pass is incomplete if any required class remains `fail`.
+
+### Recommended Thesis Format Inspection Order
+
+Use the following order by default so fixes earlier in the document do not repeatedly invalidate later checks.
+
+1. Front matter
+   - static TOC title
+   - static TOC entries after any structure or page-number change
+   - Chinese abstract title
+   - Chinese abstract body
+   - Chinese keywords
+   - English abstract title
+   - English abstract body
+   - English keywords
+   - abstract-block pagination check for both Chinese and English abstract sections, including keyword lines
+   - template-vs-thesis visual comparison for each touched front-matter class
+   - cover page template-vs-thesis visual comparison, including title block, field block, bottom signature block, and absence of wrong carried-over headers or footers
+   - front-matter section-linkage check so cover, abstracts, and TOC do not accidentally share the wrong header/footer text
+2. Main-text hierarchy
+   - level-1 headings
+   - major-chapter new-page check
+   - level-2 headings
+   - level-3 headings
+   - template-vs-thesis visual comparison for heading classes
+3. Main-text body
+   - Chinese body text
+   - Latin-script and numeric body text
+   - template-vs-thesis visual comparison for body-text classes
+4. Figures and tables
+   - figure numbering labels
+   - figure style
+   - table numbering labels
+   - table style
+   - figure-caption same-page check
+   - table-caption same-page check
+   - template-vs-thesis visual comparison for figure and table classes
+5. End matter
+   - acknowledgements title
+   - acknowledgements body
+   - references title
+   - references body
+   - template-vs-thesis visual comparison for end-matter classes
+6. Final cross-check
+   - recheck pagination after all class-level fixes
+   - recheck TOC after all class-level fixes
+   - run the final machine-vision review
+6a. During the final cross-check, record an explicit pass or fail for every touched format class. Do not declare completion if even one touched class is still unverified or still using a mixed format.
+6a1. Whenever heading classes were touched, or whenever the user asked for an overall thesis format check, the completion record must explicitly include separate status lines for:
+   - level-1 headings
+   - level-2 headings
+   - level-3 headings
+6a2. If the user reports that headings do not match the template, treat that as a failed heading-class review and return to heading-only repair before working on later classes.
+6b. Treat these as separate required format classes whenever they appear in the thesis:
+   - level-1 headings
+   - level-2 headings
+   - level-3 headings
+   - level-4 headings
+   - Chinese body text
+   - Chinese abstract title
+   - Chinese abstract body
+   - Chinese keyword label
+   - Chinese keyword content
+   - English abstract title
+   - English abstract body
+   - English `Keywords` label
+   - English keyword content
+   - TOC title
+   - TOC entries
+   - references title
+   - references body
+   - acknowledgements title
+   - acknowledgements body
+   - figure paragraph
+   - figure caption
+   - table caption
+
+Rationale:
+
+- front-matter fixes often affect pagination and TOC page references
+- heading normalization should happen before body-text cleanup
+- figure and table normalization should happen before the final pagination pass
+- references and acknowledgements should be checked after the main text is stable
+- TOC and final visual review should come last because earlier formatting changes can invalidate them
+
+### Thesis Completion Review
+
+1. After content and format edits are done, perform one machine-vision review pass on the final artifact before declaring completion.
+2. The machine-vision review must check requirement fulfillment directly, including chapter completeness, figure-code-effect correspondence, table style such as three-line tables, pagination or layout anomalies, and whether the visible result matches the user's requested changes.
+2a. For thesis format repair, the machine-vision review must also compare the final thesis against the school template or approved sample for every touched format class. A class does not pass just because it is internally consistent; it must also be consistent with the template baseline where the template defines it.
+3. Chapter-structure review must verify that each major chapter still has its expected terminal summary subsection such as `本章小结`, unless the user or template explicitly removes that requirement.
+3a. Chapter-structure review must also verify that every major chapter begins on a new page unless the school template or the user explicitly requires another layout.
+4. For every added, replaced, or moved image, the review must verify five things together:
+   - the intended image is visibly present
+   - the correct numbered caption is visibly present
+   - the image and caption still correspond to each other
+   - the image does not cover text, captions, tables, or neighboring figures
+   - surrounding text does not intrude into the image area
+5. On text-heavy pages, the machine-vision review must also verify paragraph semantics: headings must remain standalone heading paragraphs, body text must not merge into heading lines, and first-line indentation must remain consistent with the thesis style.
+5a. The machine-vision review must treat each abstract as a block.
+   - verify title, body, and keyword line all exist
+   - verify `关键词` and `Keywords` were not skipped during formatting repair
+   - verify the keyword line did not drift onto a standalone page unless the template explicitly requires it
+6. Before declaring completion, run the full `Thesis Format Class Review` and treat it as mandatory, not optional polish.
+7. Do not rely on sparse representative-page sampling alone for image-heavy chapters. Perform a per-figure review on all modified figures, and inspect representative text-heavy pages for indentation and heading-boundary regressions.
+8. If the machine-vision review cannot clearly recognize a caption, image boundary, image-text relationship, chapter-summary presence, or paragraph-boundary correctness, treat that area as unverified and continue investigating instead of declaring it correct.
+9. If the machine-vision review finds unmet requirements or visual defects, continue revising until the review passes.
+10. If the thesis uses superscript literature citations or other cross-references, the final review must verify that no citation has degraded into `错误！未定义书签` or `Error! Bookmark not defined`.
+
+11. If the user explicitly asks to verify inserted figures or their positions, machine-vision review is mandatory for every changed figure block. Do not claim the figure is fixed from structure, object counts, insertion logs, or exported-PDF appearance alone.
+12. Validation must distinguish structural success from visual success.
+   - Structural success means the document objects and paragraph relationships look correct.
+   - Visual success means the actual displayed page no longer shows overlap, clipping, burial, detachment, cross-page split, or unreadability.
+   - Do not report completion from structural success alone.
+13. Do not accept a figure as fixed merely because the image object exists, the caption exists, the image and caption are on the same page, or the exported PDF looks acceptable.
+14. For figure-layout defects reported from DOCX or WPS page view, final acceptance must be based on that actual viewing environment or a rendering path proven equivalent to it.
+   - Do not treat Word-exported PDF as the final truth when the user’s failure mode is in DOCX or WPS live layout.
+   - If the actual viewing environment cannot be verified, mark the result as unverified rather than fixed.
+15. A thesis figure passes only if all of the following are true:
+   - the intended figure is visibly present in full
+   - the figure boundary is clearly visible
+   - surrounding text does not cover, cut through, or intrude into the figure area
+   - the correct caption is visibly present directly below the figure
+   - the figure and caption remain correctly paired
+   - the figure and caption stay on the same page
+   - the figure remains readable at thesis print scale, not just technically present
+15a. A major chapter title passes pagination review only if it begins on a new page, unless the school template or the user explicitly requires another layout.
+15b. A table block passes pagination review only if the table caption and the corresponding table start on the same page; if they are split by pagination, that table block is still failing.
+16. If any of the following occurs, the figure block is still failing:
+   - text covers any part of the figure
+   - only a small fragment of the figure remains visible
+   - the caption is present but the intended figure is not
+   - the figure is present but the caption is missing
+   - the caption belongs to the wrong figure
+   - the figure is on one page while the caption is on the next page
+   - the figure is anchored to body text
+   - the rendered result still matches the user-reported failure screenshot
+   - a major chapter title appears in leftover space instead of starting from a new page
+   - a table caption appears at the bottom of one page while the corresponding table begins on the next page
+17. After repairing any figure, run a document-wide figure regression pass.
+   - confirm every visible figure caption still has a corresponding visible figure
+   - confirm every figure is still in a reasonable location
+   - confirm adjacent figures do not swallow each other
+   - confirm no later page now has text covering another figure
+   - confirm no figure-caption block was split by pagination changes
+18. If verification is incomplete, the completion statement must be conservative.
+   - Allowed: `structure repaired, actual view not yet verified`
+   - Allowed: `PDF output looks correct, DOCX/WPS view not yet verified`
+   - Not allowed: `fixed` unless actual visual verification has passed
+19. For every changed figure block, verify paragraph boundaries explicitly:
+   - image paragraph contains only the image object
+   - caption paragraph contains only the caption text
+   - the next paragraph is separate body text or a heading
+20. Treat any of these as a failed figure block:
+   - blank paragraph between image and caption
+   - caption merged with body text
+   - caption merged with a heading
+   - body text visually aligned as though it were part of the caption
+21. Verify caption numbering punctuation explicitly against the school template or the user's correction:
+   - if the required form is `图1-1` or `表1-1`, do not leave any `图1.1` / `表1.1`
+   - update both captions and in-text references together
+
+Read these only when relevant:
+
+- `references/thesis/thesis-companion.md`
+- `references/thesis/thesis-template-learning.md`
+- `references/thesis/thesis-production-workflow.md`
+- `references/thesis/thesis-format-rules.md`
+- `references/thesis/thesis-figure-generation-rules.md`
+- `references/thesis/thesis-troubleshooting-log.md`
+
+## Memory Policy
+
+Write only stable, cross-project rules into `memory.md`.
+
+Do not put these into main skill memory:
+
+- one-off project fixes
+- single-school template quirks
+- transient debugging notes
+- highly specific user aesthetic preferences
+- detailed thesis visual sample rules
+
+Move detailed or fragile thesis lessons into references, not core memory.
+
+## Resources
+
+Use these as needed:
+
+- `references/program/workflow-standard.md`
+- `references/program/stack-adaptation.md`
+- `references/program/verification-matrix.md`
+- `references/program/executable-automation.md`
+- `references/program/packaging-rules.md`
+- `references/thesis/thesis-companion.md`
+- `references/thesis/thesis-template-learning.md`
+- `references/thesis/thesis-production-workflow.md`
+- `references/thesis/thesis-format-rules.md`
+- `references/thesis/thesis-figure-generation-rules.md`
+- `references/thesis/thesis-troubleshooting-log.md`
+- `references/cases/django-music-reference.md`
+- `references/cases/mall-bigdata-reference.md`
+- `references/policy/cnki-citation-policy.md`
+
+Useful scripts:
+
+- `scripts/generate_project_blueprint.py`
+- `scripts/generate_delivery_scaffold.py`
+- `scripts/generate_acceptance_report.py`
+- `scripts/generate_thesis_blueprint.py`
+- `scripts/extract_thesis_template.py`

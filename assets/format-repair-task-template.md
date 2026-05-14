@@ -1,0 +1,431 @@
+# Format Repair Task Template
+
+## Scope Lock
+- task mode:
+- content frozen?:
+- protected blocks:
+- touched blocks this round:
+
+## Workflow Locks
+- active references:
+- routed child files:
+- active checklist names:
+- thesis mutation transaction owner path: references/thesis/thesis-mutation-transaction.md
+- selected mutation transaction workflow:
+- mutation transaction subtype:
+- thesis mutation transaction record path:
+- transaction target surface ids:
+- transaction protected sibling surface ids:
+- transaction write owner:
+- transaction audit owner or fallback:
+- transaction figure anchor location verdict:
+- transaction caption asset binding verdict:
+- transaction source manuscript path:
+- transaction source manuscript sha256:
+- transaction template path:
+- transaction template sha256:
+- transaction review-copy path:
+- transaction review-copy sha256 before mutation:
+- transaction final docx path:
+- transaction final docx sha256:
+- protected-surface evidence contract path:
+- protected surface contract evidence path:
+- protected-surface evidence contract loaded?: yes
+- canonical protected surface id set:
+- protected-surface owner map:
+- protected-surface evidence map:
+- protected-surface reviewed output sha256:
+- protected-surface evidence contract verdict:
+- exact master manuscript path:
+- true current master manuscript:
+- exact review-copy path:
+- exact review-copy sha256 before mutation:
+- exact helper-script target path:
+- expected output path after helper script:
+- expected output sha256 after helper script:
+- helper scripts planned this round:
+- project-local helper script preflight summary:
+- project-local helper preflight report path:
+- project-local helper risk count:
+- project-local helper disposition:
+- canonical source restart required?:
+- source manuscript genealogy path:
+- source retention manifest path:
+- source retention ratio:
+- source retention verdict:
+- source review-artifact inventory path:
+- final review-artifact diff path:
+- review comments/change marks preservation verdict:
+- comments strip explicit user approval:
+- source body-citation run inventory path:
+- final body-citation run diff path:
+- body citation superscripts preservation verdict:
+- rebuild class:
+- clean-source restart source path:
+- contaminated-baseline disposition:
+- project template discovery root:
+- template discovery patterns:
+- discovered candidate template paths:
+- candidate template selection reason:
+- active template source type:
+- active template path lock:
+- active template fingerprint:
+- active template profile path:
+- official school format requirement path:
+- official school format requirement fingerprint:
+- official school format rule profile path:
+- official school format rule profile generated before mutation?: yes
+- official school format rule profile verdict:
+- active template selected before mutation?: yes
+- template discovery report path:
+- template profile generation command:
+- template profile generated before mutation?: yes
+- locked path encoding verdict:
+- contaminated intermediate source used?: no
+- contaminated intermediate source disposition:
+- format preservation promise active?:
+- format preservation promise source:
+- format preservation promise verdict:
+- protected-surface write-owner map:
+- protected-surface ids in scope:
+- protected-surface ids skipped with reasons:
+- touched-surface page map:
+- stale audit map:
+- rerender target map:
+- mandatory thesis surface inventory path:
+- thesis surface inventory status matrix:
+- front matter surface coverage matrix path:
+- end matter surface coverage matrix path:
+- high-risk thesis format surfaces required:
+- high-risk thesis format surface matrix path:
+- mandatory surface rows required:
+- surfaces explicitly excluded from generic scripts:
+- custom-layout result tables locked this round:
+- active table authority lock:
+- table authority source type:
+- table authority source file path:
+- table authority manuscript binding proof:
+- table authority rationale:
+- WPS table preset target:
+- heading / TOC / chapter-start linked lane active?:
+- TOC repair included this round?:
+- TOC baseline-source lock:
+- TOC baseline source file path:
+- TOC implementation type in baseline source:
+  - content control / field
+  - old TOC paragraph styles
+  - direct paragraph formatting
+- TOC restoration source allowed to be current working draft?:
+- TOC title visual metrics baseline:
+- TOC level-1 visual metrics baseline:
+- TOC level-2 visual metrics baseline:
+- TOC level-3 visual metrics baseline:
+- TOC title paragraph-dialog / typography metrics baseline:
+- TOC level-1 paragraph-dialog / typography metrics baseline:
+- TOC level-2 paragraph-dialog / typography metrics baseline:
+- TOC level-3 paragraph-dialog / typography metrics baseline:
+- TOC visible-run direct typography baseline:
+- TOC per-level text/tab/page-number run typography baseline:
+- TOC per-level style-binding baseline:
+- TOC scale/compression baseline verdict:
+- TOC page-count / occupancy baseline:
+- TOC visual geometry baseline:
+- TOC post-refresh restoration owner:
+- live TOC required this round?:
+- front-matter numbering convention expected on rendered pages:
+- office-app path used to verify adjusted page numbers:
+- abstract surfaces locked:
+- abstract baseline source file path:
+- Chinese abstract title baseline paragraph/run path:
+- Chinese abstract body baseline paragraph/run path:
+- Chinese keyword line baseline paragraph/run path:
+- English abstract title baseline paragraph/run path:
+- English abstract body baseline paragraph/run path:
+- English keyword line baseline paragraph/run path:
+- keyword label/content run-split baseline:
+- English abstract semantic parity baseline:
+- protected abstract/TOC evidence id rule: each evidence record must use the exact protected surface id in both target identifier and baseline surface id; no generic abstract/TOC/front-matter ids; no evidence-path reuse across protected surfaces
+- protected-surface contract rule: all protected surface ids, owner maps, evidence paths, effective font-chain fields, reviewed output hashes, and final verdicts must follow `references/thesis/format-rules/protected-surface-evidence-contract.md`
+- template-owned surface families touched or user-reported:
+- user-named catastrophic format failure surfaces:
+- required issue-ledger rows for user-named surfaces:
+- style-blast-radius trigger:
+- protected-surface freeze manifest path:
+- protected_surface_freeze_manifest schema:
+- protected_surface_freeze_manifest sha256:
+- protected_surface_freeze_manifest verdict:
+- pre-mutation protected-surface snapshot path:
+- post-mutation protected-surface snapshot path:
+- post_mutation_surface_diff path:
+- post_mutation_surface_diff sha256:
+- post_mutation_surface_diff verdict:
+- target_surface_render_review path:
+- target_surface_render_review sha256:
+- target_surface_render_review verdict:
+- blast_radius_render_review path:
+- blast_radius_render_review sha256:
+- blast_radius_render_review verdict:
+- cross_surface_regression_report path:
+- cross_surface_regression_report sha256:
+- cross_surface_regression_report verdict:
+- non-target protected surface change verdict:
+- chapter_format_preservation_report path:
+- chapter_format_preservation_report sha256:
+- chapter_format_preservation_report verdict:
+- chapter format preservation detector verdict:
+- non-target format preservation verdict:
+- local-surface whole-thesis claim verdict:
+- cross-surface regression diff path:
+- cross-surface regression owner:
+- TOC underline pollution detector required?:
+- table style regression detector required?:
+- surface-face parity baseline source paths:
+- surface-face parity owner map:
+- surface-face sibling audit scope:
+- all-surface paragraph-dialog / typography metrics baseline:
+- all-surface style-binding hard-field rule: every template-owned surface must expose WPS/Word paragraph-dialog and typography baseline/actual fields; broad baseline metrics prose is not enough
+- all-surface paragraph-dialog / typography evidence record paths:
+- whole-document pagination surface active?: yes
+- whole-document pagination baseline source:
+- package baseline manifest path:
+- pre-mutation page map path:
+- section break numbering baseline path:
+- page-number restart baseline path:
+- header/footer link-to-previous baseline path:
+- hard page-break / section-break baseline path:
+- field-refresh baseline state:
+- TOC-to-heading page sync baseline path:
+- logical-physical page map baseline path:
+- rendered page count baseline:
+- blank-page scan baseline path:
+- cover style baseline source:
+- cover identity value-line baseline source:
+- cover value cell targeted baseline:
+- cover label cell unchanged baseline:
+- cover underline x/y/width baseline:
+- cover value text bbox baseline:
+- cover row baseline alignment baseline:
+- reference-entry baseline source:
+- appendix baseline source or absence reason:
+- custom/builder/default font usage allowed?: no
+- font baseline source for each touched surface:
+- Chinese/East Asian font mapping baseline:
+- Western/English font mapping baseline:
+- complex-script font mapping baseline:
+- official body font rule baseline:
+- substitute-font rejection policy:
+- effective font chain baseline required?: yes
+- protected-surface effective font chain rule:
+- theme/default font alias policy:
+- missing font or surface baseline blockers:
+- caption baseline source file path:
+- caption wording lock:
+- paragraph-level rendered review path:
+- verified renderer executable path:
+- verified rasterizer executable path:
+- touched header/footer surfaces:
+- odd/even header baseline source:
+- page-number field baseline source:
+- body-header ownership strategy:
+- tail-block ownership strategy:
+- tail-block pagination repair included this round?:
+- tail-block titles in scope:
+- tail-block title baseline source file path:
+- references title baseline paragraph/run path:
+- references entries baseline paragraph/run path:
+- acknowledgement title baseline paragraph/run path:
+- acknowledgement body baseline paragraph/run path:
+- end-matter indentation detector required?: yes
+- tail-block opener ownership baseline:
+- tail-block pagination restoration owner:
+- tail-block opener page-occupancy baseline:
+- footer baseline source file path:
+- footer/page-number presentation target:
+- logical-page to physical-rendered-page mapping method:
+- implicit skips allowed?: no
+- post-script smoke-audit rule active?: yes
+
+## Review Evidence Paths
+- rendered page review evidence record paths:
+- thesis mutation transaction validator command:
+- thesis mutation transaction validator result:
+- paragraph-review evidence record paths:
+- touched-page review evidence record paths:
+- TOC post-refresh restoration evidence record paths:
+- TOC rendered baseline comparison evidence record paths:
+- TOC visual geometry evidence record paths:
+- TOC paragraph-and-typography evidence record paths:
+- TOC visible-run typography evidence record paths:
+- whole-document pagination evidence record path:
+- package drift report path:
+- post-mutation page map path:
+- whole-document pagination diff path:
+- section break numbering map path:
+- chapter start owner map path:
+- tail-block owner map path:
+- TOC-to-heading page sync map path:
+- logical-physical page map path:
+- blank-page scan evidence path:
+- cross-surface regression freeze evidence path:
+- TOC underline pollution evidence path:
+- table style regression evidence path:
+- table-local structure evidence record paths:
+- rendered table baseline comparison evidence record paths:
+- table title-mode evidence paths:
+- table header-bottom middle-rule evidence paths:
+- chapter format diff path:
+- touched chapter rendered evidence paths:
+- citation audit report path:
+- citation audit final DOCX SHA256:
+- citation audit source-to-final run diff path:
+- citation-reference coupled-chain evidence path:
+- citation-reference coupled-chain verdict:
+- bibliography content/order/GB-T compliance evidence path:
+- bibliography content/order/GB-T compliance verdict:
+- figure anchor location verdict:
+- caption asset binding verdict:
+- caption rendered review evidence record paths:
+- header/footer rendered review evidence record paths:
+- tail-block pagination evidence record paths:
+- tail-block rendered opener comparison evidence record paths:
+- references title indentation evidence record path:
+- references entries indentation evidence record path:
+- acknowledgement title indentation evidence record path:
+- acknowledgement body indentation evidence record path:
+- rendered PDF path:
+- page-image artifact paths:
+- output manuscript paths:
+- reviewed output sha256:
+- post-script smoke-audit evidence path:
+
+## Baseline Source
+- school template:
+- official school format requirement:
+- official school format rule profile:
+- approved sample:
+- explicit user rule:
+- fallback baseline if no school rule exists:
+- page-class sample comparison targets:
+- full sequential render review target pages:
+- full sequential blank/near-empty page scan method:
+- active table authority source summary:
+- TOC title baseline paragraph path:
+- TOC level-1 baseline paragraph path:
+- TOC level-2 baseline paragraph path:
+- TOC level-3 baseline paragraph path:
+- TOC level-4 baseline paragraph path:
+- TOC entries by used level baseline:
+- TOC right-tab position baseline:
+- TOC line-spacing baseline:
+- TOC paragraph before/after spacing baseline:
+- TOC line-spacing mode/value baseline:
+- TOC indentation chars/points baseline:
+- TOC per-level font-size/weight baseline:
+- TOC dotted-leader baseline:
+- TOC page-number column per-entry baseline:
+- TOC title bbox baseline:
+- TOC entry row bbox baseline:
+- TOC per-level left-indent x baseline:
+- TOC line-spacing y-delta baseline:
+- TOC dotted-leader start/end/density baseline:
+- TOC page-number x column baseline:
+- TOC row-count / page-occupancy rhythm baseline:
+- forbidden substitute evidence allowed?: no
+- tail-block title baseline paragraph paths:
+- references title indentation baseline:
+- references entries left/hanging indentation baseline:
+- acknowledgement title indentation baseline:
+- acknowledgement body indentation baseline:
+- surface-face baseline paragraph/run paths:
+- surface-face baseline metrics recorded:
+  - style binding / outline or list state
+  - paragraph alignment / indentation / spacing / line spacing
+  - tabs / leaders / keep rules / page-break ownership
+  - font families for ascii / hAnsi / eastAsia / cs
+  - font size / bold / italic / underline / color / highlight
+  - superscript / subscript / field / hyperlink / bookmark behavior
+  - table borders / image-holder / formula-number behavior when applicable
+- effective font resolver inputs:
+  - direct run rPr and rFonts
+  - character style rPr
+  - paragraph style rPr and basedOn chain
+  - docDefaults rPrDefault
+  - theme major/minor font mappings
+  - WPS/Word UI displayed font name
+
+## Repair Sequence
+1. baseline extraction
+2. structure repair
+3. pagination / field refresh
+4. style unification
+5. regression review
+
+## Acceptance Focus
+- rendered pages to inspect:
+- rendered sentinel texts to confirm:
+- specific format classes to verify:
+- table authority checkpoints:
+- table-local structure checkpoints:
+- table title-mode checkpoints:
+- table header-bottom middle-rule checkpoints:
+- table donor title mode:
+- table target title mode:
+- table in-table merged-title-row checkpoints:
+- table top/header/bottom rule checkpoints:
+- table rendered crop metric json path:
+- surface-face parity checkpoints:
+- all-surface paragraph-dialog and typography checkpoints:
+- mandatory thesis surface inventory checkpoints:
+- front matter surface coverage matrix checkpoints:
+- end matter surface coverage matrix checkpoints:
+- high-risk thesis format surface checkpoints:
+- high-risk omission blocker verdict:
+- cover style checkpoints:
+- cover identity value-line checkpoints:
+- abstract and keyword checkpoints:
+- abstract six-surface evidence checkpoints:
+- keyword label/content run-split checkpoints:
+- English abstract semantic parity checkpoints:
+- TOC visual baseline checkpoints:
+- TOC per-level evidence checkpoints:
+- TOC used-level inventory checkpoints:
+- TOC per-entry page-number checkpoints:
+- TOC visual geometry checkpoints:
+- TOC paragraph-dialog and typography checkpoints:
+- TOC visible-run text/tab/page-number typography checkpoints:
+- TOC visible-run typography verdict:
+- cross-surface regression verdict:
+- TOC underline pollution verdict:
+- table style regression verdict:
+- references entry format checkpoints:
+- references title indentation checkpoints:
+- references entries indentation checkpoints:
+- acknowledgement title indentation checkpoints:
+- acknowledgement body indentation checkpoints:
+- end-matter rendered geometry checkpoints:
+- appendix format checkpoints:
+- sibling-surface audit checkpoints:
+- font-family baseline checkpoints:
+- protected-surface effective font chain checkpoints:
+- builder/default font rejection checkpoints:
+- template alignment verdict:
+- TOC restoration checkpoints:
+- post-script smoke-audit checkpoints:
+- chapter-start pagination checkpoints:
+- chapter format preservation checkpoints:
+- tail-block pagination checkpoints:
+- whole-document pagination checkpoints:
+- whole-document pagination verdict:
+- runtime screenshot route-caption-asset map path:
+- runtime screenshot full-window geometry evidence path:
+- runtime screenshot full-window capture verdict:
+- project-local helper preflight report schema/command/exit-status checkpoints:
+- template discovery/profile generation metadata checkpoints:
+- review-copy promotion gate:
+- baseline promotion gate:
+- release blocker ledger path:
+- unresolved release blocker count:
+- scoped artifact next-baseline verdict:
+- blocker conditions:
+- format preservation blocker conditions:
+- known caveats:

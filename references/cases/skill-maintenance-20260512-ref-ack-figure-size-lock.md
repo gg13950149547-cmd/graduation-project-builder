@@ -1,0 +1,39 @@
+# Skill Invocation Lock
+
+- skill name: graduation-project-builder
+- user invocation source: explicit `$graduation-project-builder` link and request to repair skill rules for references, acknowledgement title indentation, and figure sizing
+- invocation detected: yes
+- lock created before mutation?: yes
+- run start order verdict: pass
+- task mode: skill-maintenance
+- subtask: harden thesis format gates for reference-entry content formatting, acknowledgement title indentation, and paragraph-margin figure sizing
+- project root: D:\项目\校园异常行为检测研究
+- requested mutation?: yes, canonical skill bundle only
+- thesis/docx surface touched?: no
+- loaded entrypoint: C:\Users\Administrator\.agents\skills\graduation-project-builder\SKILL.md
+- loaded routed references: references/user-feedback-persistence.md; references/agents/agent-lanes.md; focused thesis citation/layout/figure/protected-surface references
+- active checklist path: C:\Users\Administrator\.agents\skills\graduation-project-builder\references\cases\skill-maintenance-20260512-ref-ack-figure-size-checklist.md
+- agent run manifest path: C:\Users\Administrator\.agents\skills\graduation-project-builder\references\cases\skill-maintenance-20260512-ref-ack-figure-size-agent-manifest.md
+- lane task card paths: C:\Users\Administrator\.agents\skills\graduation-project-builder\references\cases\skill-maintenance-20260512-ref-ack-figure-size-task-cards.md
+- project-local helper preflight report path: not-applicable; no thesis DOCX mutation or project-local helper execution in this skill-only run
+- project-local helper risk count: not-applicable
+- project-local helper disposition: skill-only; project DOCX frozen
+- mutation transaction record path: not-applicable; no thesis DOCX mutation
+- mutation allowed verdict: pass for canonical skill bundle files only
+- blocked reason: none
+- exact output path: not-applicable; no thesis DOCX output
+- exact output sha256: not-applicable
+- final gate record path: not-applicable; skill bundle gate is the handoff gate
+- final gate command: py -3 scripts\validate_skill_gate.py --skill-root .
+- explicit invocation source type: user message with skill link
+- skill activation status: active
+- rule engine takeover verdict: pass
+- prohibited bypasses checked: no DOCX mutation; no project-local thick helper; no smoke-only handoff; no final thesis claim
+- canonical gate required?: yes
+- narrow/smoke gate substitute used?: no
+- final gate verdict: pass with `py -3 scripts\validate_skill_gate.py --skill-root .`
+- UTF-8 clean verdict: pass with `py -3 scripts\check_utf8_clean.py --root . --json`
+- no project-local thick helper execution before preflight?: not-applicable
+- no non-control action before lock?: yes
+- no mutation before lock?: yes
+- final handoff allowed verdict: pass for skill-only handoff

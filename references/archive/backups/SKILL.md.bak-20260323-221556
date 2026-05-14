@@ -1,0 +1,329 @@
+---
+name: graduation-project-builder
+description: Autonomously summarize requirements, develop missing features, improve incomplete areas, verify behavior, package a graduation project or course-design application, and prepare or revise the matching thesis materials end to end.
+---
+
+# Graduation Project Builder
+
+Execute like an end-to-end project finisher. The target is not "some code changes"; the target is a project that can be explained, run, tested, and demonstrated.
+
+Model the workflow on complete delivery examples such as a Django music recommendation system that includes:
+
+- requirement-facing README
+- deploy and start scripts
+- seed or import commands for demo data
+- packaging script
+- regression tests for core flows
+
+Generalize that pattern to the current repository regardless of stack.
+
+Read `references/django-music-reference.md` when you want the concrete source pattern behind this skill.
+Read `references/mall-bigdata-reference.md` when the project is a mixed data-engineering and dashboard delivery with lightweight simulation behind a heavier architecture story.
+Read `references/thesis-template-learning.md` when the user provides a school paper sample and expects the thesis to imitate its chapter structure and figure/table rhythm.
+Read `references/thesis-production-workflow.md` when the task includes full thesis production from codebase understanding to Word assembly.
+
+## Primary Outcome
+
+Produce these states whenever the repository allows it:
+
+- automatic requirement summary
+- automatic development backlog and implementation
+- automatic improvement and polish pass
+- automatic verification and test pass
+- automatic startup, deployment, and packaging guidance
+- executable scaffold generation for startup, deployment, packaging, testing, and reporting
+- packaging-time generation of one-click start, one-click deploy, and manual deployment documentation
+- thesis-companion planning, drafting, diagram planning, and format-following support
+- thesis-companion drafting with mandatory subsection lead-in paragraphs and inline citation markers
+- thesis-companion drafting with mandatory subsection lead-in paragraphs inline citation markers
+
+If the current repository cannot fully reach those states, build as much of the automation surface as possible and document the exact blockers.
+
+## Default Working Mode
+
+Assume the user wants direct execution, not a brainstorm, unless they explicitly ask for analysis only.
+
+Before editing, inspect:
+
+- project root and subprojects
+- framework markers and package manifests
+- run, build, test, and migration commands
+- README, docs, SQL, screenshots, task books, or reports
+- deployment scripts, seed scripts, data import scripts, and packaging files
+- missing modules, broken routes, placeholder pages, and untested flows
+- thesis templates, sample papers, chapter outlines, school formatting requirements, and figure/table examples when present
+- citation style expectations, literature source constraints, and in-text citation patterns when present
+
+If requirements are underspecified, reconstruct them from the repository and write them down in a working brief. Use `scripts/generate_project_blueprint.py` when useful.
+Then use `scripts/generate_delivery_scaffold.py` to create missing execution surfaces when they do not exist yet.
+When a paper is required, use `scripts/generate_thesis_blueprint.py` to map the program into a thesis structure before drafting text.
+
+## Core Workflow
+
+### 1. Summarize requirements automatically
+
+Reconstruct a concrete requirement brief from the repo instead of waiting for perfect user input.
+
+Always extract:
+
+- project purpose
+- user roles
+- core modules
+- key entities or tables
+- primary routes or pages
+- demo path
+- data initialization path
+- verification path
+- thesis-writing inputs such as required chapters, mandatory sections, and expected figures/tables when templates or samples exist
+- minimum subsection length and formatting constraints
+- minimum subsection length, single-citation-per-sentence rule, and final DOCX superscript handling requirements
+
+Persist the result to a repo document such as `docs/project-blueprint.md` when that will improve continuity.
+
+Read `references/workflow-standard.md` for the target shape.
+
+### 2. Detect the current stack and adapt
+
+Do not force one technology pattern onto every project. Detect the stack first, then choose the least risky completion strategy.
+
+Typical detection signals:
+
+- `manage.py`, `requirements.txt`, `pyproject.toml`: Python web stack
+- `app.py`, `Flask`, `run_pipeline.py`: Python dashboard plus pipeline stack
+- `pom.xml`, `build.gradle`: Java stack
+- `package.json`, `vite.config.*`, `src/`: Node or frontend stack
+- `docker-compose.yml`, `Dockerfile`: containerized workflow
+- `*.sql`, migration folders, ORM models: data-layer signals
+- `deploy/`, `tools/hadoop*`, `upload_to_hdfs.py`, `sync_to_mysql.py`: data-engineering delivery signals
+
+Read `references/stack-adaptation.md` when deciding how to operate within a detected stack.
+
+### 3. Turn the brief into an execution backlog
+
+Normalize the work into these categories:
+
+- authentication and authorization
+- dashboard or landing page
+- business modules and CRUD flows
+- search, filter, pagination, ranking, or recommendation behavior
+- form validation and error handling
+- data initialization, migration, seed, or import flow
+- pipeline orchestration, ETL, analysis, report export, or data sync flow when the project is analytics-oriented
+- test coverage for the main path
+- deployment, startup, and packaging
+
+Prefer fewer complete modules over many broken ones.
+
+### 4. Develop in vertical slices
+
+For each module, complete the slice in this order:
+
+1. schema, entity, or model
+2. service or business logic
+3. controller, route, or API
+4. page, template, component, or UI binding
+5. validation and error states
+6. tests or manual verification hooks
+
+Keep the project runnable after each slice.
+
+### 5. Add automation surfaces
+
+A graduation-project repository is stronger when the project can be bootstrapped and verified quickly. Add or improve automation where appropriate:
+
+- environment setup script
+- one-command startup script
+- migration or schema-init command
+- seed or demo-data import command
+- packaging or release bundle script
+- concise README or manual deployment guide
+- thesis blueprint, chapter plan, figure plan, and table plan when the user needs a paper
+- subsection expansion and figure-table planning when the user needs a paper
+- subsection expansion pass when any subsection is under the minimum length requirement
+
+Mirror the discipline from the Django sample, but adapt the implementation to the current stack.
+
+Prefer generating real scripts over leaving instructions in prose when the repository is missing:
+
+- deploy script
+- start script
+- package script
+- test script
+- acceptance report
+- manual deployment guide
+- thesis blueprint
+- citation plan
+
+When preparing a final delivery bundle, ensure the package includes all of these whenever possible:
+
+- one-click start script
+- one-click deploy script
+- manual deployment document
+- thesis draft inputs or blueprint when the user expects a companion paper
+- reference list and citation mapping when the user expects a companion paper
+
+### 6. Improve and polish automatically
+
+After core features work, do an improvement pass:
+
+- remove placeholders and dead links
+- improve empty, loading, and error states
+- align frontend requests with backend contracts
+- tighten validation and edge-case handling
+- ensure demo accounts, demo data, or screenshots are possible
+
+For graduation-project frontend delivery, treat these as default hard requirements unless the user explicitly overrides them:
+
+- beautify the frontend to a near-commercial standard rather than leaving low-fidelity prototype pages
+- when the user emphasizes visual quality, default toward a polished, youthful, platform-like style in the same quality band as mainstream Chinese content or campus-service products, not a plain admin template
+- keep a coherent visual system with unified color, spacing, typography, navigation, and page hierarchy
+- split user-side and admin-side experiences into separate page groups rather than mixing roles on one screen
+- split each core function into its own page instead of stacking student management, analysis, evaluation, comment review, and word management into a single page
+- split authentication flows into separate pages when they are materially different tasks; login, registration, password recovery, and profile completion should not be collapsed into one crowded screen by default
+- if the system depends on core business data such as scores, study duration, attendance, orders, or inventory, provide a concrete maintenance or import path for that data instead of leaving it as hidden seed data only
+- if the project includes registration, user-created data, or admin-maintained business data, do not use destructive startup database modes such as create-drop for routine runs; default to persistent storage behavior so data survives restart unless the user explicitly asks for a reset
+- block access to user-side pages, admin-side pages, and protected feature APIs before login
+- enforce role-aware and user-scoped data access after login; user-side pages must default to the current logged-in user's own information rather than exposing global data sets
+- write all interface text from the end-user perspective; never put assistant-facing explanations, defense notes, or development commentary into the UI
+
+### 7. Test automatically and continuously
+
+Do not leave testing to the very end.
+
+After each substantial change, run the narrowest relevant checks for the stack:
+
+- framework health check
+- migrations or schema validation
+- unit or integration tests
+- frontend build
+- backend compile
+- targeted manual flow checks when automated tests are missing
+
+Read `references/verification-matrix.md` for stack-specific defaults.
+
+### 8. Finish for defense and delivery
+
+A project is not done until it is defensible:
+
+- startup commands are real
+- key modules work on the main path
+- test results are known
+- required configuration is documented
+- packaging or submission bundle is prepared when needed
+- limitations are stated plainly if blockers remain
+- the paper outline, chapter mapping, and figure/table plan are ready when the project requires a thesis
+- each subsection has a lead-in paragraph before details, figures, or tables
+- each subsection should normally be at least 300 Chinese characters unless the user explicitly overrides this
+
+## Decision Rules
+
+- Preserve the existing stack unless it is structurally broken.
+- Prefer conventional code over clever abstractions.
+- Prioritize a runnable demo path over optional features.
+- When the repository already includes part of the workflow, complete and reuse it instead of replacing it.
+- When time is limited, optimize for: runnable app, stable data path, core module coverage, demo readiness.
+- If the original topic promises heavyweight technologies that are impractical to fully reproduce, preserve the external module names and architecture story while implementing a lighter, defendable simulation path underneath.
+- For graduation-project web systems, do not treat "can demo on one page" as sufficient. Prefer a complete product-like information architecture with separate portal, user pages, and admin pages.
+- For graduation-project web systems, authentication is part of the minimum believable delivery. If the project has user-side or admin-side functionality, require login before entering those functional pages unless the user explicitly asks for a public-facing route.
+- For graduation-project systems with student-side or end-user-side pages, do not let the user browse all records by default. The default contract is "see your own profile, your own analysis, your own evaluation" unless the user explicitly requests a different business model.
+- For graduation-project UI copy, write labels, titles, hints, and helper text as though they are for real students, teachers, or administrators using the system, not for the human requesting the build.
+- When the user approves a specific visual direction during a graduation-project task, treat that visual direction as a persistent style rule for the rest of the project unless the user later changes it.
+- After changing entry pages, static frontend files, or access-control behavior in a graduation project, restart the runnable app and verify the live HTTP response or rendered page content before declaring the fix complete. Do not rely only on local file contents.
+- If the user provides a thesis template or sample, follow its formatting, chapter order, and heading style, but write fresh content grounded in the actual project.
+- When revising a thesis or dissertation from screenshots, comments, or marked-up pages, treat only the user-provided annotations and materials as authoritative. Do not invent, expand, or infer extra reviewer comments that the user did not explicitly provide.
+- When revising Word thesis files, do not rely on console-mediated text rewrite paths that can corrupt Chinese text into `?` or replacement glyphs. Prefer UTF-8 encoded scripts or direct Unicode-safe document editing paths, and always run a post-edit scan for garbled paragraphs before declaring completion.
+- When a reviewer comment requests a figure rhythm such as "one figure, then several explanatory lines, then the next figure", implement that structure literally. Do not group several figures together and explain them in one combined paragraph.
+- When checking thesis template compliance, treat image container paragraphs and body paragraphs as different formatting targets. Paragraphs that contain only inserted figures should normally be centered independently, while explanatory text below the figure should follow body-text formatting unless the template says otherwise.
+- When removing thesis content during revision, do not leave behind empty paragraph nodes unless the template explicitly requires visual blank lines at that location. Clearing paragraph text without deleting the paragraph can create unexplained blank lines in the final DOCX.
+- Do not use broad style-normalization passes that overwrite or loosen template-controlled font settings. When adjusting thesis formatting, separate paragraph geometry changes from font changes, and preserve the template's original font family, size, and emphasis unless the target section is being intentionally restyled from the template.
+- Treat table-of-contents handling as its own explicit task. Updating document fields alone does not mean the TOC format is correct; you must verify TOC page, heading levels, numbering style, and visible formatting against the school template.
+- When a thesis includes a generated TOC, treat the TOC title, TOC field paragraph, and the page break after the TOC as three separate formatting tasks. The TOC must not be considered complete until the next section starts on a new page and the visible TOC entry font matches the template after field update.
+- Treat the bibliography/reference section as a dedicated formatting block. Its heading, paragraph alignment, font family, font size, and punctuation conventions must be checked separately from the body text and separately from the sample paper's narrative pages.
+- When the user provides a school formatting template that is itself a rules document, read it as an instruction manual, not as a document whose visible current layout should be copied blindly. Extract its explicit formatting requirements item by item and apply those rules to the thesis.
+- If the available screenshots, comments, templates, or source files are insufficient to support an accurate revision, stop the edit plan, list the missing materials concretely, and wait for the user to provide them before continuing.
+- Before closing any graduation-project-builder thesis or dissertation revision workflow, always return to the original annotated source document and re-check every original comment against the final output. Do not treat intermediate rewritten files as the sole source of truth for completion.
+- After each completed thesis workflow, review the user's concrete feedback on the produced files and write the extracted lessons back into the skill references or scripts so future runs inherit the improvement by default.
+
+## Thesis Revision Failure Patterns To Avoid
+
+When revising a graduation thesis in Word, explicitly check for these failure modes before claiming completion:
+
+- school template file was treated as a sample layout instead of a rules document
+- sample thesis file was not used as a visual comparison target for the final rendering
+- garbled Chinese text appeared because text was rewritten through an unsafe console encoding path
+- content was removed by clearing paragraph text instead of deleting the paragraph node, leaving unexplained blank lines
+- image container paragraphs were formatted like body text instead of being centered independently
+- reviewer-required figure rhythm such as "one figure plus explanation, then next figure plus explanation" was ignored
+- broad style normalization changed template-controlled fonts, sizes, or emphasis
+- heading runs inside heading paragraphs lost bold formatting even though the paragraph style remained a heading
+- TOC was treated as "done" merely because field updating was enabled; TOC title, TOC entry font, line spacing, tabs, visible page numbers, and the page break after TOC were not separately checked
+- bibliography/reference formatting was treated like body text instead of an independent formatting block
+- final verification used only the latest intermediate draft instead of returning to the original annotated source document
+
+Default closing checklist for thesis-formatting tasks:
+
+- re-open the original annotated thesis and verify every original comment
+- scan for garbled characters and stray `?`
+- scan for unexpected empty body paragraphs
+- inspect all heading levels for bold, font, and alignment
+- inspect image paragraphs, captions, and figure explanations separately
+- inspect TOC title, TOC field paragraph, TOC entry rendering, and the page break before abstract
+- inspect bibliography heading plus each reference paragraph's font, size, alignment, and punctuation
+
+## Stack-Agnostic Completion Standard
+
+Treat the project as incomplete until most of these are true:
+
+- the repository's purpose is documented in a generated or updated brief
+- the main flows run locally
+- the data path is reproducible
+- the main feature paths are implemented end to end
+- at least one verification layer exists for the important flows
+- startup and packaging steps match reality
+
+## Resources
+
+Additional durable frontend portal rule:
+
+- when a portal already provides role-specific login forms, do not place extra card-level buttons such as "进入学生端" or "进入管理端"; instead show the default test account for that role and keep the only real action as logging in
+- when a role can be used for live interaction rather than admin-only testing, the portal must either provide a registration path or clearly state how that role obtains an account; do not leave end users with a login form but no account acquisition path
+- when showing test accounts, display both the test account and the matching test password explicitly
+- after each meaningful user correction or repeated implementation lesson in a graduation-project workflow, write the distilled rule back into the skill or its references instead of leaving it only in project-local memory
+- when preparing a customer-facing delivery package, treat "one-click deploy" as a required artifact alongside one-click start and stop; do not stop at startup scripts only
+- when the user explicitly says "each function should be a separate page", treat login and registration as separate pages as well; do not keep registration embedded inside the login portal
+- when a moderation or filtering rule blocks user-generated content, blocked content should not appear in the normal user-facing feed; expose it only in dedicated moderation or audit views unless the user explicitly requests another policy
+
+### Script
+
+- `scripts/generate_project_blueprint.py`
+  Inspect a repository, infer the stack and project shape, and generate a working blueprint markdown file.
+- `scripts/generate_delivery_scaffold.py`
+  Generate stack-aware PowerShell helper scripts plus a delivery manifest and manual deployment guide for repositories that lack deployment, startup, package, or test entrypoints.
+- `scripts/generate_acceptance_report.py`
+  Inspect the repository and produce a defendability report that states what is ready, what is missing, and what still blocks acceptance.
+- `scripts/generate_thesis_blueprint.py`
+  Inspect the repository and produce a thesis-writing blueprint that maps project modules, figures, tables, and likely chapter content to a dissertation structure.
+- `scripts/extract_thesis_template.py`
+  Read a thesis sample file and extract a reusable heading skeleton so the new paper can follow the same structure.
+
+### References
+
+- `references/workflow-standard.md`
+  Use this as the canonical end-to-end workflow standard derived from a complete project delivery.
+- `references/django-music-reference.md`
+  Use this when you need a concrete example of the full workflow standard in one real Django project.
+- `references/mall-bigdata-reference.md`
+  Use this when you need a concrete example of a mixed pipeline, Flask dashboard, Hadoop, and database delivery with simulated data and reduced implementation cost.
+- `references/stack-adaptation.md`
+  Use this to map the workflow onto Python, Java, Node, frontend-only, and mixed repositories.
+- `references/verification-matrix.md`
+  Use this to choose the narrowest meaningful checks and tests for the detected stack.
+- `references/executable-automation.md`
+  Use this when deciding which artifacts to generate automatically and how aggressive the automation should be.
+- `references/thesis-companion.md`
+  Use this when the project needs a matching paper, especially when the user provides a template or sample and expects format-following writing, diagrams, and full chapter content.
+- `references/thesis-template-learning.md`
+  Use this when the user has already provided a real sample thesis and wants the new paper to imitate its structure and chapter rhythm.
+- `references/thesis-production-workflow.md`
+  Use this as the default reusable workflow for producing a thesis from a real program, generating figures, adding core code, assembling Word, and stopping once only template formatting remains.
+
