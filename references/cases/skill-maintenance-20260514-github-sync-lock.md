@@ -22,22 +22,22 @@
 - mutation allowed verdict: pass for canonical skill bundle git synchronization only
 - blocked reason: none
 - exact output path: C:/Users/Administrator/.agents/skills/graduation-project-builder
-- exact output sha256: pending, directory-level git commit/push evidence will be used
+- exact output sha256: git commit 71fa116688757be711b414e2e05aeaa82793afd3 pushed to remote main; directory-level hash not applicable
 - final gate record path: references/cases/skill-maintenance-20260514-github-sync-manifest.md
 - final gate command: py -3 scripts/validate_skill_gate.py --skill-root .
-- final gate verdict: pending
+- final gate verdict: pass
 - explicit invocation source type: direct skill link in user message
 - skill activation status: active
 - rule engine takeover verdict: pass after fresh lock
-- prohibited bypasses checked: pending
+- prohibited bypasses checked: pass
 - canonical gate required?: yes
 - narrow/smoke gate substitute used?: no
 - failed evidence escalation verdict: pass, pre-lock git probe recorded as drift and fresh lock created before mutation
 - no project-local thick helper execution before preflight?: not-applicable
 - no non-control action before lock?: no
 - no mutation before lock?: yes
-- final handoff allowed verdict: pending
-- blocked evidence disposition: no blocked evidence; pre-lock probe is reference-only and must be superseded by post-lock checks
+- final handoff allowed verdict: pass
+- blocked evidence disposition: no blocked evidence; pre-lock probe was reference-only and superseded by post-lock checks
 
 ## Use
 
